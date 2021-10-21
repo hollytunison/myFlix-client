@@ -22759,7 +22759,7 @@ class MainView extends _reactDefault.default.Component {
         };
     }
     componentDidMount() {
-        _axiosDefault.default.get('https://mysterious-plains-19334.herokuapp.com//movies').then((response)=>{
+        _axiosDefault.default.get('https://mysterious-plains-19334.herokuapp.com/movies').then((response)=>{
             this.setState({
                 movies: response.data
             });
