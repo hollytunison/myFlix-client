@@ -16,8 +16,7 @@
         typeof window !== 'undefined' ?
         window :
         typeof global !== 'undefined' ?
-        global :
-        {};
+        global : {};
     /* eslint-enable no-undef */
 
     // Save the require from previous bundle to this closure if any
