@@ -1,4 +1,8 @@
-$color: steelblue;
+* {
+    box-sizing: border-box;
+}
+
+$color: rgb(22, 61, 92);
 .my-flix {
     color: $color;
 }
