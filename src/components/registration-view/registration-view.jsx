@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Navbar, Nav, Form, Button, Card, CardGroup, Container, Row, Col, FormGroup } from 'react-bootstrap';
+import { NavbarView, Form, Button, Card, CardGroup, Container, Row, Col, FormGroup } from 'react-bootstrap';
 
 export function RegistrationView(props) {
   const [ username, setUsername ] = useState('');
@@ -18,6 +18,8 @@ export function RegistrationView(props) {
   };
 
   return (
+    <div className="registerScreen">
+      < NavbarView />
     <Container>
       <Form>
     <Form.Group className="mb-3" controlId="formUsername">
@@ -44,6 +46,7 @@ export function RegistrationView(props) {
 
     </Form>
     </Container>
+    </div>
   )
 }
 

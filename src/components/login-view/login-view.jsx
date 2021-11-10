@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Navbar, Nav, Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
+import { NavbarView, Nav, Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
 
 
 export function LoginView(props) {
