@@ -2,17 +2,12 @@
     box-sizing: border-box;
 }
 
-.main-view {
-    font-family: 'Roboto', sans-serif;
+.registerContainer {
     background: linear-gradient(#E375CB, #78F2DD);
     width: 100%;
-    display: inline-block;
+    height: 100vh;
 }
 
 .bg-navColor {
     background: #3A3D47;
-}
-
-.container {
-    margin: 32px;
 }

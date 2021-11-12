@@ -9,28 +9,19 @@ import NavItem from "react-bootstrap/NavItem";
 export class NavbarView extends React.Component {
   render() {
     const { user } = this.props;
+
     return (
-      <div>
-        <Navbar className="nav" collapseOnSelect="true" bg="dark" variant="dark" expand="lg">
-          <Container>
-            <Navbar.Brand href="#home">
-              <img
-                alt=""
-                src="/logo.svg"
-                width="30"
-                height="30"
-                className="d-inline-block align-top"
-              />{" "}
-              TUBULAR 80's
-            </Navbar.Brand>
-            <Navbar.Collapse className="justify-content-end">
-      <Navbar.Text>
-        Signed in as: <a href="#login">User</a>
-      </Navbar.Text>
-    </Navbar.Collapse>
-          </Container>
-        </Navbar>
-      </div>
+      <Navbar className="navRegistration">
+        <Container fluid>
+          <Navbar.Brand href="#home">Radical 80's</Navbar.Brand>
+          <Navbar.Toggle />
+          <Navbar.Collapse className="justify-content-end">
+            <Button variant="primary">Sign In</Button>{" "}
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     );
   }
 }
+
+

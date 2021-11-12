@@ -1,8 +1,8 @@
-* {
-    box-sizing: border-box;
-}
-
-$color: rgb(22, 61, 92);
-.my-flix {
-    color: $color;
+@import "~bootstrap/scss/bootstrap";
+.h1,
+.h2,
+.p {
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    background-color: #3A3D47;
 }
