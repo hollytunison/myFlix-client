@@ -32,73 +32,79 @@ export function RegistrationView(props) {
   };
 
   return (
-    
-    <Container fluid className="registerContainer" >
-<Navbar bg="navColor" variant="dark" expand="lg">
+    <Container fluid className="loginContainer">
+      <Navbar bg="navColor" variant="dark" expand="lg">
         <Container fluid>
           <Navbar.Brand href="#home">Back to the 80's</Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text>
-              Already registered?  <a href="#login">Log in here</a>
+              New user? <a href="#login">Register here</a>
             </Navbar.Text>
           </Navbar.Collapse>
         </Container>
       </Navbar>
 
-
       <Row>
         <Col>
           <CardGroup>
-            <Card>
-              <Card.Title>Please Register</Card.Title>
-              <Form>
-                <Form.Group className="mb-3" controlId="formUsername">
-                  <Form.Label>Username</Form.Label>
-                  <Form.Control
-                    type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                  />
-                </Form.Group>
+            <Card className="registerCard">
+              <Card.Body>
+                <Card.Title className="text-center">
+                  Welcome to Back to the 80's!
+                </Card.Title>
+                <Card.Subtitle className="mb-2 text-muted text-center">
+                  Please Register
+                </Card.Subtitle>
 
-                <Form.Group className="mb-3" controlId="formPassword">
-                  <Form.Label>Password</Form.Label>
-                  <Form.Control
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </Form.Group>
+                <Form>
+                  <Form.Group className="mb-3" controlId="formUsername">
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control
+                      type="text"
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
+                    />
+                  </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formEmail">
-                  <Form.Label>Email</Form.Label>
-                  <Form.Control
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </Form.Group>
+                  <Form.Group className="mb-3" controlId="formPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
+                      type="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
+                  </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBirthday">
-                  <Form.Label>Birthday</Form.Label>
-                  <Form.Control
-                    type="date"
-                    value={birthday}
-                    onChange={(e) => setBirthday(e.target.value)}
-                  />
-                </Form.Group>
+                  <Form.Group className="mb-3" controlId="formEmail">
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                  </Form.Group>
 
-                <Button
-                  className="registerButton"
-                  variant="secondary"
-                  size="lg"
-                  type="submit"
-                  onClick={handleSubmit}
-                >
-                  Register
-                </Button>
-              </Form>
+                  <Form.Group className="mb-3" controlId="formBirthday">
+                    <Form.Label>Birthday</Form.Label>
+                    <Form.Control
+                      type="date"
+                      value={birthday}
+                      onChange={(e) => setBirthday(e.target.value)}
+                    />
+                  </Form.Group>
+
+                  <Button
+                    className="registerButton"
+                    variant="secondary"
+                    size="lg"
+                    type="submit"
+                    onClick={handleSubmit}
+                  >
+                    Register
+                  </Button>
+                </Form>
+              </Card.Body>
             </Card>
           </CardGroup>
         </Col>

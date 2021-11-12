@@ -77,9 +77,9 @@ export class MainView extends React.Component {
       <div className="main-view">
               <Navbar bg="navColor" variant="dark" expand="lg" >
                 <Container fluid>
-                  <Navbar.Brand href="#home">Back to the 80's</Navbar.Brand>
+                  <Navbar.Brand href="#movies">Back to the 80's</Navbar.Brand>
                   <Nav className="justify-content-end">
-                    <Nav.Link href="#home">Movies</Nav.Link>
+                    <Nav.Link href="#movies">Movies</Nav.Link>
                     <Nav.Link href="#user">Profile</Nav.Link>
                     <Nav.Link href="#logout">Logout</Nav.Link>
                   </Nav>
