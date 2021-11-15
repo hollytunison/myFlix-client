@@ -39,7 +39,7 @@ export function RegistrationView(props) {
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text>
-              New user? <a href="#login">Register here</a>
+              Already registered? <a href="#login">Login here</a>
             </Navbar.Text>
           </Navbar.Collapse>
         </Container>
@@ -51,7 +51,7 @@ export function RegistrationView(props) {
             <Card className="registerCard">
               <Card.Body>
                 <Card.Title className="text-center">
-                  Welcome to Back to the 80's!
+                  Back to the 80's!
                 </Card.Title>
                 <Card.Subtitle className="mb-2 text-muted text-center">
                   Please Register

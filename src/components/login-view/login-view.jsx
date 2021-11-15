@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import axios from "axios";
 import PropTypes from "prop-types";
+import Form from "react-bootstrap/Form";
 import {
   Navbar,
   Nav,
@@ -22,8 +24,18 @@ export function LoginView(props) {
     e.preventDefault();
     console.log(username, password);
     /* Send a request to the server for authentication */
-    /* then call props.onLoggedIn(username) */
-    props.onLoggedIn(username);
+    axios
+      .post("https://mysterious-plains-19334.herokuapp.com//login", {
+        Username: username,
+        Password: password,
+      })
+      .then((response) => {
+        const data = response.data;
+        props.onLoggedIn(data);
+      })
+      .catch((e) => {
+        console.log("no such user");
+      });
   };
 
   return (
@@ -43,7 +55,7 @@ export function LoginView(props) {
       <Card className="loginCard">
         <Card.Body>
           <Card.Title className="text-center">
-            Welcome to Back to the 80's!
+            Welcome, Back to the 80's!
           </Card.Title>
           <Card.Subtitle className="mb-2 text-muted text-center">
             Please Login
