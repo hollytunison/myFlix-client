@@ -42,7 +42,7 @@ export function LoginView(props) {
     <Container fluid className="loginContainer">
       <Navbar bg="navColor" variant="dark" expand="lg">
         <Container fluid>
-          <Navbar.Brand href="#home">Back to the 80's</Navbar.Brand>
+          <Navbar.Brand href="#home">Welcome to Back to the 80's</Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text>
