@@ -37664,7 +37664,7 @@ function LoginView(props) {
                                 lineNumber: 45
                             },
                             __self: this,
-                            children: "Welcome to Back to the 80's"
+                            children: "Back to the 80's"
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Toggle, {
                             __source: {
