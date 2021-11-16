@@ -24,18 +24,8 @@ export function LoginView(props) {
     e.preventDefault();
     console.log(username, password);
     /* Send a request to the server for authentication */
-    axios
-      .post("https://mysterious-plains-19334.herokuapp.com//login", {
-        Username: username,
-        Password: password,
-      })
-      .then((response) => {
-        const data = response.data;
-        props.onLoggedIn(data);
-      })
-      .catch((e) => {
-        console.log("no such user");
-      });
+    /* then call props.onLoggedIn(username) */
+    props.onLoggedIn(username);
   };
 
   return (

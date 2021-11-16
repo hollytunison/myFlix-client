@@ -1,0 +1,17 @@
+.movieContainer {
+  display: inline-block;
+}
+
+.movieCard {
+  width: 100%;
+  margin: 20px;
+  font-family: 'robo', sans-serif;
+}
+
+.cardImage {
+  width: 100% !important;
+  height: 200px !important;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/*# sourceMappingURL=movie-card.css.map */
