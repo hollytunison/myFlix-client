@@ -17,6 +17,28 @@ import { NavbarView } from "../navbar-view/navbar-view";
 import axios from "axios";
 import "./registration-view.scss";
 
+// export function LoginView(props) {
+//   const [username, setUsername] = useState("");
+//   const [password, setPassword] = useState("");
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     /* Send a request to the server for authentication */
+//     axios.post('https://mysterious-plains-19334.herokuapp.com/login', {
+//       Username: username,
+//       Password: password
+//     })
+//     .then(response => {
+//       const data = response.data;
+//       props.onLoggedIn(data);
+//     })
+//     .catch(e => {
+//       console.log('no such user')
+//     });
+//   };
+
+
+
 export function RegistrationView(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -26,9 +48,19 @@ export function RegistrationView(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(username, password, email, birthday);
-    /* Send a request to the server for authentication */
-    /* then call props on registored user(username) */
-    props.onRegistration(username);
+    axios.post('https://mysterious-plains-19334.herokuapp.com/users' , {
+      Username: username,
+      Password: password,
+      Email: email,
+      Birthday: birthday,
+    })
+      .then(response => {
+        const data = response.data;
+        props.onRegistration(data.Username);
+      })
+      .catch(e => {
+        console.log('no such user')
+      })
   };
 
   return (
