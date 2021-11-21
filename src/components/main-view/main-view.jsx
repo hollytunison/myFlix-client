@@ -66,6 +66,7 @@ export class MainView extends React.Component {
      this.getMovies(authData.token);
    }
 
+   // DO I USE THIS Method instead? ASK BEN
   // onLoggedIn(user) {
   //   this.setState({
   //     user
