@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import axios from "axios";
-import PropTypes from "prop-types";
+import React, { useState } from 'react';
+import axios from 'axios';
+import PropTypes from 'prop-types';
 import {
   Navbar,
   Nav,
@@ -11,9 +11,9 @@ import {
   Container,
   Row,
   Col,
-} from "react-bootstrap";
+} from 'react-bootstrap';
 
-import "./login-view.scss";
+import './login-view.scss';
 
 export function LoginView(props) {
   const [username, setUsername] = useState("");

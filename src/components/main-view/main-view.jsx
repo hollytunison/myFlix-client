@@ -1,4 +1,5 @@
 import React from 'react';
+
 //importing axios library to fetch movies from database
 import axios from 'axios';
 
@@ -11,7 +12,7 @@ import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
-import { Navbar, Nav, Container, Row, Col } from 'react-bootstrap';
+import { Navbar, Nav, Container, Row, Col, Button } from 'react-bootstrap';
 
 import './main-view.scss';
 
@@ -21,21 +22,21 @@ export class MainView extends React.Component {
         this.state = {
             movies: [],
             selectedMovie: null,
-            user: null
+            user: null,
+            Description: null,
+            Movies: null
         };
     }
 
-    componentDidMount(){
-        axios.get('https://mysterious-plains-19334.herokuapp.com/movies')
-          .then(response => {
-            this.setState({
-              movies: response.data
-            });
-          })
-          .catch(error => {
-            console.log(error);
-          });
+    componentDidMount() {
+      let accessToken = localStorage.getItem('token');
+      if (accessToken !== null) {
+        this.setState({
+          user: localStorage.getItem('user')
+        });
+        this.getMovies(accessToken);
       }
+    }
     
       /*When a movie is clicked, this function is invoked and updates the state of
   the `selectedMovie` *property to that movie*/
@@ -55,15 +56,21 @@ export class MainView extends React.Component {
   /* When a user successfully logs in, this function updates the `user`
   property in state to that *particular user*/
   onLoggedIn(authData) {
-    console.log(authData);
-    this.setState({
-      user: authData.user.Username
-    });
+     console.log(authData);
+     this.setState({
+       user: authData.user.Username
+     });
   
-    localStorage.setItem('token', authData.token);
-    localStorage.setItem('user', authData.user.Username);
-    this.getMovies(authData.token);
-  }
+     localStorage.setItem('token', authData.token);
+     localStorage.setItem('user', authData.user.Username);
+     this.getMovies(authData.token);
+   }
+
+  // onLoggedIn(user) {
+  //   this.setState({
+  //     user
+  //   });
+  // }
 
   getMovies(token) {
     axios.get('https://mysterious-plains-19334.herokuapp.com/movies', {
@@ -77,6 +84,15 @@ export class MainView extends React.Component {
     })
     .catch(function (error) {
       console.log(error);
+    });
+  }
+
+  onLoggedOut() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    console.log('logging out');
+    this.setState({
+      user: null
     });
   }
 
