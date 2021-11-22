@@ -1,43 +1,9 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import {
-  Navbar,
-  Nav,
-  Form,
-  Button,
-  Card,
-  CardGroup,
-  Container,
-  Row,
-  Col,
-  Button,
-} from "react-bootstrap";
-import { NavbarView } from "../navbar-view/navbar-view";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import axios from 'axios';
+import { Navbar, Nav, Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
 
-import axios from "axios";
-import "./registration-view.scss";
-
-// export function LoginView(props) {
-//   const [username, setUsername] = useState("");
-//   const [password, setPassword] = useState("");
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     /* Send a request to the server for authentication */
-//     axios.post('https://mysterious-plains-19334.herokuapp.com/login', {
-//       Username: username,
-//       Password: password
-//     })
-//     .then(response => {
-//       const data = response.data;
-//       props.onLoggedIn(data);
-//     })
-//     .catch(e => {
-//       console.log('no such user')
-//     });
-//   };
-
-
+import './registration-view.scss';
 
 export function RegistrationView(props) {
   const [username, setUsername] = useState("");
@@ -64,7 +30,9 @@ export function RegistrationView(props) {
   };
 
   return (
-    <Container fluid className="loginContainer">
+
+    <Container fluid className='registrationContainer'>
+
       <Navbar bg="navColor" variant="dark" expand="lg">
         <Container fluid>
           <Navbar.Brand href="#home">Back to the 80's</Navbar.Brand>
