@@ -1,6 +1,4 @@
 import React from 'react';
-
-//importing axios library to fetch movies from database
 import axios from 'axios';
 
 import PropTypes from 'prop-types';
@@ -65,13 +63,6 @@ export class MainView extends React.Component {
      localStorage.setItem('user', authData.user.Username);
      this.getMovies(authData.token);
    }
-
-   // DO I USE THIS Method instead? ASK BEN
-  // onLoggedIn(user) {
-  //   this.setState({
-  //     user
-  //   });
-  // }
 
   getMovies(token) {
     axios.get('https://mysterious-plains-19334.herokuapp.com/movies', {
