@@ -64,7 +64,7 @@ export function RegistrationView(props) {
                       type="text" 
                       value={username} 
                       onChange={e => setUsername(e.target.value)} 
-                      placeholder="Username required"
+                      placeholder="John"
                       required
                     />
                   </Form.Group>
@@ -75,7 +75,7 @@ export function RegistrationView(props) {
                       type="password" 
                       value={password} 
                       onChange={e => setPassword(e.target.value)} 
-                      placeholder="Password required"
+                      placeholder="mypassword123"
                       required
                     />
                   </Form.Group>
@@ -86,7 +86,7 @@ export function RegistrationView(props) {
                       type="email" 
                       value={email} 
                       onChange={e => setEmail(e.target.value)} 
-                      placeholder="Email required"
+                      placeholder="john@gmail.com"
                       required
                     />
                   </Form.Group>
