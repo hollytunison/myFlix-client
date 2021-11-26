@@ -1,9 +1,21 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import axios from 'axios';
-import { Navbar, Nav, Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import {
+  Navbar,
+  Nav,
+  Form,
+  Button,
+  Card,
+  CardGroup,
+  Container,
+  Row,
+  Col,
+  Button,
+} from "react-bootstrap";
+import { NavbarView } from "../navbar-view/navbar-view";
 
-import './registration-view.scss';
+import axios from "axios";
+import "./registration-view.scss";
 
 export function RegistrationView(props) {
   const [username, setUsername] = useState("");
@@ -14,25 +26,13 @@ export function RegistrationView(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(username, password, email, birthday);
-    axios.post('https://mysterious-plains-19334.herokuapp.com/users' , {
-      Username: username,
-      Password: password,
-      Email: email,
-      Birthday: birthday,
-    })
-      .then(response => {
-        const data = response.data;
-        props.onRegistration(data.Username);
-      })
-      .catch(e => {
-        console.log('no such user')
-      })
+    /* Send a request to the server for authentication */
+    /* then call props on registored user(username) */
+    props.onRegistration(username);
   };
 
   return (
-
-    <Container fluid className='registrationContainer' >
-
+    <Container fluid className="loginContainer">
       <Navbar bg="navColor" variant="dark" expand="lg">
         <Container fluid>
           <Navbar.Brand href="#home">Back to the 80's</Navbar.Brand>
@@ -58,56 +58,51 @@ export function RegistrationView(props) {
                 </Card.Subtitle>
 
                 <Form>
-                  <Form.Group>
+                  <Form.Group className="mb-3" controlId="formUsername">
                     <Form.Label>Username</Form.Label>
-                    <Form.Control 
-                      type="text" 
-                      value={username} 
-                      onChange={e => setUsername(e.target.value)} 
-                      placeholder="John"
-                      required
+                    <Form.Control
+                      type="text"
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
                     />
                   </Form.Group>
 
-                  <Form.Group>
+                  <Form.Group className="mb-3" controlId="formPassword">
                     <Form.Label>Password</Form.Label>
-                      <Form.Control 
-                      type="password" 
-                      value={password} 
-                      onChange={e => setPassword(e.target.value)} 
-                      placeholder="mypassword123"
-                      required
+                    <Form.Control
+                      type="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                   </Form.Group>
 
-                  <Form.Group>
+                  <Form.Group className="mb-3" controlId="formEmail">
                     <Form.Label>Email</Form.Label>
-                    <Form.Control 
-                      type="email" 
-                      value={email} 
-                      onChange={e => setEmail(e.target.value)} 
-                      placeholder="john@gmail.com"
-                      required
+                    <Form.Control
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </Form.Group>
 
-                  <Form.Group>
+                  <Form.Group className="mb-3" controlId="formBirthday">
                     <Form.Label>Birthday</Form.Label>
-                    <Form.Control 
-                      className="mb-3" 
-                      type="date" 
-                      value={birthday} 
-                      onChange={e => setBirthday(e.target.value)} 
+                    <Form.Control
+                      type="date"
+                      value={birthday}
+                      onChange={(e) => setBirthday(e.target.value)}
                     />
                   </Form.Group>
 
                   <Button
+                    className="registerButton"
                     variant="secondary"
                     size="lg"
                     type="submit"
-                    onClick={handleSubmit}>Register
+                    onClick={handleSubmit}
+                  >
+                    Register
                   </Button>
-
                 </Form>
               </Card.Body>
             </Card>
