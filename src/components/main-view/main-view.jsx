@@ -10,6 +10,8 @@ import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { render } from 'react-dom';
 
 import { Navbar, Nav, Container, Row, Col, Button } from 'react-bootstrap';
 
@@ -26,7 +28,7 @@ export class MainView extends React.Component {
 
   getMovies(token) {
     axios
-      .get('https://mysterious-plains-19334.herokuapp.com/movies', {
+      .get("https://mysterious-plains-19334.herokuapp.com/movies", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -41,10 +43,10 @@ export class MainView extends React.Component {
   }
 
   componentDidMount() {
-    let accessToken = localStorage.getItem('token');
+    let accessToken = localStorage.getItem("token");
     if (accessToken !== null) {
       this.setState({
-        user: localStorage.getItem('user'),
+        user: localStorage.getItem("user"),
       });
       this.getMovies(accessToken);
     }
@@ -73,15 +75,15 @@ export class MainView extends React.Component {
       user: authData.user.Username,
     });
 
-    localStorage.setItem('token', authData.token);
-    localStorage.setItem('user', authData.user.Username);
+    localStorage.setItem("token", authData.token);
+    localStorage.setItem("user", authData.user.Username);
     this.getMovies(authData.token);
   }
 
   onLoggedOut() {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-    console.log('logging out');
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    console.log("logging out");
     this.setState({
       user: null,
     });
@@ -90,22 +92,21 @@ export class MainView extends React.Component {
   render() {
     const { movies, selectedMovie, user, register } = this.state;
 
-    if (!register)
-      return (
-        <RegistrationView
-          onRegistration={(register) => this.onRegistration(register)}
-        />
-      );
+    // if (!user)
+    //   return <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />;
 
-    /* If there is no user, the LoginView is rendered. If there is a user
-    logged in, the user details are *passed as a prop to the LoginView*/
-    if (!user)
-      return <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />;
+    // if (!register)
+    //   return (
+    //     <RegistrationView
+    //       onRegistration={(register) => this.onRegistration(register)}
+    //     />
+    //   );
 
-    // Before the movies have been loaded
-    if (movies.length === 0) return <div className="main-view" />;
+    // // Before the movies have been loaded
+    // if (movies.length === 0) return <div className="main-view" />;
 
     return (
+      <Router>
       <div className="main-view">
         <Navbar bg="navColor" variant="dark" expand="lg">
           <Container fluid>
@@ -117,6 +118,11 @@ export class MainView extends React.Component {
             </Nav>
           </Container>
         </Navbar>
+
+        <Route path="/hello/abc/:name" render={({match}) => {
+          return <p>Hello, {match.params.name}</p>
+        }}/>
+
 
         <Container className="card-container">
           {selectedMovie ? (
@@ -147,6 +153,7 @@ export class MainView extends React.Component {
           )}
         </Container>
       </div>
+      </Router>
     );
   }
 }
