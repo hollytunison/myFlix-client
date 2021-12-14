@@ -18,142 +18,144 @@ import { Navbar, Nav, Container, Row, Col, Button } from 'react-bootstrap';
 import './main-view.scss';
 
 export class MainView extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      movies: [],
-      user: null,
-    };
-  }
+	constructor() {
+		super();
+		this.state = {
+			movies: [],
+			user: null,
+		};
+	}
 
-  getMovies(token) {
-    axios
-      .get("https://mysterious-plains-19334.herokuapp.com/movies", {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then((response) => {
-        // Assign the result to the state
-        this.setState({
-          movies: response.data,
-        });
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
+	getMovies(token) {
+		axios
+			.get('https://mysterious-plains-19334.herokuapp.com/movies', {
+				headers: { Authorization: `Bearer ${token}` },
+			})
+			.then((response) => {
+				// Assign the result to the state
+				this.setState({
+					movies: response.data,
+				});
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+	}
 
-  componentDidMount() {
-    let accessToken = localStorage.getItem("token");
-    if (accessToken !== null) {
-      this.setState({
-        user: localStorage.getItem("user"),
-      });
-      this.getMovies(accessToken);
-    }
-  }
+	componentDidMount() {
+		let accessToken = localStorage.getItem('token');
+		if (accessToken !== null) {
+			this.setState({
+				user: localStorage.getItem('user'),
+			});
+			this.getMovies(accessToken);
+		}
+	}
 
-  /*When a movie is clicked, this function is invoked and updates the state of
+	/*When a movie is clicked, this function is invoked and updates the state of
   the `selectedMovie` *property to that movie*/
-  setSelectedMovie(movie) {
-    this.setState({
-      selectedMovie: movie,
-    });
-  }
+	setSelectedMovie(movie) {
+		this.setState({
+			selectedMovie: movie,
+		});
+	}
 
-  //When a user successfully registers
-  onRegistration(register) {
-    this.setState({
-      register,
-    });
-  }
+	//When a user successfully registers
+	onRegistration(register) {
+		this.setState({
+			register,
+		});
+	}
 
-  /* When a user successfully logs in, this function updates the `user`
+	/* When a user successfully logs in, this function updates the `user`
   property in state to that *particular user*/
-  onLoggedIn(authData) {
-    console.log(authData);
-    this.setState({
-      user: authData.user.Username,
-    });
+	onLoggedIn(authData) {
+		console.log(authData);
+		this.setState({
+			user: authData.user.Username,
+		});
 
-    localStorage.setItem("token", authData.token);
-    localStorage.setItem("user", authData.user.Username);
-    this.getMovies(authData.token);
-  }
+		localStorage.setItem('token', authData.token);
+		localStorage.setItem('user', authData.user.Username);
+		this.getMovies(authData.token);
+	}
 
-  onLoggedOut() {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    console.log("logging out");
-    this.setState({
-      user: null,
-    });
-  }
+	onLoggedOut() {
+		localStorage.removeItem('token');
+		localStorage.removeItem('user');
+		console.log('logging out');
+		this.setState({
+			user: null,
+		});
+	}
 
-  render() {
-    const { movies, selectedMovie, user, register } = this.state;
+	render() {
+		const { movies, selectedMovie, user, register } = this.state;
 
-    // if (!user)
-    //   return <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />;
+		if (!user)
+			return <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />;
 
-    // if (!register)
-    //   return (
-    //     <RegistrationView
-    //       onRegistration={(register) => this.onRegistration(register)}
-    //     />
-    //   );
+		if (!register)
+			return (
+				<RegistrationView
+					onRegistration={(register) => this.onRegistration(register)}
+				/>
+			);
 
-    // // Before the movies have been loaded
-    // if (movies.length === 0) return <div className="main-view" />;
+		// Before the movies have been loaded
+		if (movies.length === 0) return <div className="main-view" />;
 
-    return (
-      <Router>
-      <div className="main-view">
-        <Navbar bg="navColor" variant="dark" expand="lg">
-          <Container fluid>
-            <Navbar.Brand href="#movies">Back to the 80's</Navbar.Brand>
-            <Nav className="justify-content-end">
-              <Nav.Link href="#movies">Movies</Nav.Link>
-              <Nav.Link href="#user">Profile</Nav.Link>
-              <Nav.Link href="#logout">Logout</Nav.Link>
-            </Nav>
-          </Container>
-        </Navbar>
+		return (
+			<Router>
+				<div className="main-view">
+					<Navbar bg="navColor" variant="dark" expand="lg">
+						<Container fluid>
+							<Navbar.Brand href="#movies">Back to the 80's</Navbar.Brand>
+							<Nav className="justify-content-end">
+								<Nav.Link href="#movies">Movies</Nav.Link>
+								<Nav.Link href="#user">Profile</Nav.Link>
+								<Nav.Link href="#logout">Logout</Nav.Link>
+							</Nav>
+						</Container>
+					</Navbar>
 
-        <Route path="/hello/abc/:name" render={({match}) => {
-          return <p>Hello, {match.params.name}</p>
-        }}/>
+					<Route
+						path="/hello/abc/:name"
+						render={({ match }) => {
+							return <p>Hello, {match.params.name}</p>;
+						}}
+					/>
 
-
-        <Container className="card-container">
-          {selectedMovie ? (
-            <Row xs={1} md={2} className="g-4">
-              <Col sm={8}>
-                <MovieView
-                  movie={selectedMovie}
-                  onBackClick={(newSelectedMovie) => {
-                    this.setSelectedMovie(newSelectedMovie);
-                  }}
-                />
-              </Col>
-            </Row>
-          ) : (
-            <Row xs={1} md={2} className="g-4">
-              {movies.map((movie) => (
-                <Col>
-                  <MovieCard
-                    key={movie._id}
-                    movie={movie}
-                    onMovieClick={(newSelectedMovie) => {
-                      this.setSelectedMovie(newSelectedMovie);
-                    }}
-                  />
-                </Col>
-              ))}
-            </Row>
-          )}
-        </Container>
-      </div>
-      </Router>
-    );
-  }
+					<Container className="card-container">
+						{selectedMovie ? (
+							<Row xs={1} md={2} className="g-4">
+								<Col sm={8}>
+									<MovieView
+										movie={selectedMovie}
+										onBackClick={(newSelectedMovie) => {
+											this.setSelectedMovie(newSelectedMovie);
+										}}
+									/>
+								</Col>
+							</Row>
+						) : (
+							<Row xs={1} md={2} className="g-4">
+								{movies.map((movie) => (
+									<Col>
+										<MovieCard
+											key={movie._id}
+											movie={movie}
+											onMovieClick={(newSelectedMovie) => {
+												this.setSelectedMovie(newSelectedMovie);
+											}}
+										/>
+									</Col>
+								))}
+							</Row>
+						)}
+					</Container>
+				</div>
+			</Router>
+		);
+	}
 }
