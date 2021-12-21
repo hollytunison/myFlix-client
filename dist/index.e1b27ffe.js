@@ -27741,6 +27741,9 @@ function LoginView(props) {
     _s();
     const [username, setUsername] = _react.useState('');
     const [password, setPassword] = _react.useState('');
+    // Declare hook for each input
+    const [usernameErr, setUsernameErr] = _react.useState('');
+    const [passwordErr, setPasswordErr] = _react.useState('');
     const handleSubmit = (e)=>{
         e.preventDefault();
         /* Send a request to the server for authentication */ _axiosDefault.default.post('https://mysterious-plains-19334.herokuapp.com/login', {
@@ -27757,20 +27760,20 @@ function LoginView(props) {
         className: "loginContainer",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 40
+            lineNumber: 43
         },
         __self: this,
         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card, {
             className: "loginCard",
             __source: {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 41
+                lineNumber: 44
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 42
+                    lineNumber: 45
                 },
                 __self: this,
                 children: [
@@ -27778,7 +27781,7 @@ function LoginView(props) {
                         className: "text-center",
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 43
+                            lineNumber: 46
                         },
                         __self: this,
                         children: "Welcome to CinemaFlix."
@@ -27787,7 +27790,7 @@ function LoginView(props) {
                         className: "mb-2 text-muted text-center",
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 46
+                            lineNumber: 49
                         },
                         __self: this,
                         children: "Please Login"
@@ -27795,7 +27798,7 @@ function LoginView(props) {
                     /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form, {
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 50
+                            lineNumber: 53
                         },
                         __self: this,
                         children: [
@@ -27803,14 +27806,14 @@ function LoginView(props) {
                                 controlId: "formUsername",
                                 __source: {
                                     fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 51
+                                    lineNumber: 54
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                         __source: {
                                             fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 52
+                                            lineNumber: 55
                                         },
                                         __self: this,
                                         children: "Username"
@@ -27824,7 +27827,7 @@ function LoginView(props) {
                                         required: true,
                                         __source: {
                                             fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 53
+                                            lineNumber: 56
                                         },
                                         __self: this
                                     })
@@ -27834,14 +27837,14 @@ function LoginView(props) {
                                 controlId: "formPassword",
                                 __source: {
                                     fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 62
+                                    lineNumber: 65
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                         __source: {
                                             fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 63
+                                            lineNumber: 66
                                         },
                                         __self: this,
                                         children: "Password"
@@ -27856,7 +27859,7 @@ function LoginView(props) {
                                         required: true,
                                         __source: {
                                             fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 64
+                                            lineNumber: 67
                                         },
                                         __self: this
                                     })
@@ -27870,7 +27873,7 @@ function LoginView(props) {
                                 onClick: handleSubmit,
                                 __source: {
                                     fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 74
+                                    lineNumber: 77
                                 },
                                 __self: this,
                                 children: "Login"
@@ -27882,7 +27885,7 @@ function LoginView(props) {
         })
     }));
 }
-_s(LoginView, "wuQOK7xaXdVz4RMrZQhWbI751Oc=");
+_s(LoginView, "OE8YjcJGIuyxg6F5muZvwXJgQUc=");
 _c = LoginView;
 LoginView.propTypes = {
     user: _propTypesDefault.default.shape({
