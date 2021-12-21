@@ -44,7 +44,7 @@ export function LoginView(props) {
 			<Card className='loginCard'>
 				<Card.Body>
 					<Card.Title className='text-center'>
-						Welcome to CinemaFlix.
+						Welcome to Back to the 80s!
 					</Card.Title>
 					<Card.Subtitle className='mb-2 text-muted text-center'>
 						Please Login
@@ -55,11 +55,13 @@ export function LoginView(props) {
 							<Form.Label>Username</Form.Label>
 							<Form.Control
 								type='text'
-								placeholder='*required field'
+								placeholder='Enter username'
 								value={username}
 								onChange={(e) => setUsername(e.target.value)}
 								required
 							/>
+							{/* code added here to display validation error */}
+							{usernameErr && <p>{usernameErr}</p>}
 						</Form.Group>
 
 						<Form.Group controlId='formPassword'>
@@ -68,10 +70,12 @@ export function LoginView(props) {
 								className='mb-3'
 								type='password'
 								value={password}
-								placeholder='*required field'
+								placeholder='Enter password'
 								onChange={(e) => setPassword(e.target.value)}
 								required
 							/>
+							{/* code added here to display validation error */}
+							{passwordErr && <p>{passwordErr}</p>}
 						</Form.Group>
 
 						<Button
