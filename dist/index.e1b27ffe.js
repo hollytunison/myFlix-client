@@ -40023,7 +40023,7 @@ class MovieView extends _reactDefault.default.Component {
                                             lineNumber: 38
                                         },
                                         __self: this,
-                                        children: movie.ReleaseYear
+                                        children: movie.Year
                                     })
                                 ]
                             }),
@@ -40953,13 +40953,13 @@ class DirectorView extends _reactDefault.default.Component {
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                        className: "birthyear",
+                                        className: "birth",
                                         __source: {
                                             fileName: "src/components/director-view/director-view.jsx",
                                             lineNumber: 27
                                         },
                                         __self: this,
-                                        children: "BirthYear: "
+                                        children: "Birth: "
                                     }),
                                     /*#__PURE__*/ _jsxRuntime.jsx("span", {
                                         className: "value",
@@ -41005,7 +41005,7 @@ DirectorView.propTypes = {
         Director: _propTypesDefault.default.shape({
             Name: _propTypesDefault.default.string.isRequired,
             Bio: _propTypesDefault.default.string.isRequired,
-            BirthYear: _propTypesDefault.default.number.isRequired
+            Birth: _propTypesDefault.default.number.isRequired
         }).isRequired
     })
 };
