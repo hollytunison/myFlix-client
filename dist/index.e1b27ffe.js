@@ -39888,7 +39888,7 @@ class MovieCard extends _reactDefault.default.Component {
 }
 MovieCard.propTypes = {
     movie: _propTypesDefault.default.shape({
-        Title: _propTypesDefault.default.number.isRequired,
+        Title: _propTypesDefault.default.string.isRequired,
         Year: _propTypesDefault.default.number.isRequired
     }).isRequired
 };
