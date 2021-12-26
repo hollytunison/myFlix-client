@@ -22832,108 +22832,110 @@ class MainView extends _reactDefault.default.Component {
             },
             __self: this,
             children: [
-                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
-                    fluid: true,
+                /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Navbar, {
+                    fixed: "top",
+                    className: "mainnav py-3 py-lg-4",
+                    bg: "navColor",
+                    variant: "dark",
+                    expand: "md",
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
                         lineNumber: 86
                     },
                     __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Navbar, {
-                        bg: "navColor",
-                        variant: "dark",
-                        expand: "lg",
-                        __source: {
-                            fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 87
-                        },
-                        __self: this,
-                        children: [
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Brand, {
-                                href: "#home",
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Brand, {
+                            href: "/",
+                            __source: {
+                                fileName: "src/components/main-view/main-view.jsx",
+                                lineNumber: 93
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                className: "brand-name",
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 88
+                                    lineNumber: 94
                                 },
                                 __self: this,
-                                children: "Back to the 80's"
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Toggle, {
-                                "aria-controls": "basic-navbar-nav",
-                                __source: {
-                                    fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 89
-                                },
-                                __self: this
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Collapse, {
-                                id: "basic-navbar-nav",
-                                __source: {
-                                    fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 90
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Nav, {
-                                    className: "me-auto",
-                                    __source: {
-                                        fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 91
-                                    },
-                                    __self: this,
-                                    children: [
-                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
-                                            href: "/",
-                                            __source: {
-                                                fileName: "src/components/main-view/main-view.jsx",
-                                                lineNumber: 92
-                                            },
-                                            __self: this,
-                                            children: "Movies"
-                                        }),
-                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
-                                            href: "/users/:username",
-                                            __source: {
-                                                fileName: "src/components/main-view/main-view.jsx",
-                                                lineNumber: 93
-                                            },
-                                            __self: this,
-                                            children: "Profile"
-                                        }),
-                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
-                                            href: "/",
-                                            onClick: ()=>{
-                                                this.onLoggedOut();
-                                            },
-                                            __source: {
-                                                fileName: "src/components/main-view/main-view.jsx",
-                                                lineNumber: 94
-                                            },
-                                            __self: this,
-                                            children: "Logout"
-                                        })
-                                    ]
-                                })
+                                children: "CinemaFlix"
                             })
-                        ]
-                    })
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Toggle, {
+                            "aria-controls": "basic-navbar-nav",
+                            __source: {
+                                fileName: "src/components/main-view/main-view.jsx",
+                                lineNumber: 96
+                            },
+                            __self: this
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Collapse, {
+                            id: "basic-navbar-nav",
+                            __source: {
+                                fileName: "src/components/main-view/main-view.jsx",
+                                lineNumber: 97
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Nav, {
+                                className: "ms-auto",
+                                __source: {
+                                    fileName: "src/components/main-view/main-view.jsx",
+                                    lineNumber: 98
+                                },
+                                __self: this,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
+                                        href: "/",
+                                        __source: {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 99
+                                        },
+                                        __self: this,
+                                        children: "Movies"
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
+                                        href: "/users/:username",
+                                        __source: {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 100
+                                        },
+                                        __self: this,
+                                        children: "Profile"
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
+                                        href: "/",
+                                        onClick: ()=>{
+                                            this.onLoggedOut();
+                                        },
+                                        __source: {
+                                            fileName: "src/components/main-view/main-view.jsx",
+                                            lineNumber: 101
+                                        },
+                                        __self: this,
+                                        children: "Logout"
+                                    })
+                                ]
+                            })
+                        })
+                    ]
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx("div", {
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 107
+                        lineNumber: 113
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 108
+                            lineNumber: 114
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                             className: "justify-content-md-center",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 109
+                                lineNumber: 115
                             },
                             __self: this,
                             children: [
@@ -22953,7 +22955,7 @@ class MainView extends _reactDefault.default.Component {
                                         return movies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                                 sm: 6,
                                                 md: 4,
-                                                lg: 3,
+                                                lg: 4,
                                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                                                     movie: m
                                                 })
@@ -22962,7 +22964,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 110
+                                        lineNumber: 116
                                     },
                                     __self: this
                                 }),
@@ -22979,7 +22981,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 133
+                                        lineNumber: 139
                                     },
                                     __self: this
                                 }),
@@ -23000,7 +23002,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 145
+                                        lineNumber: 151
                                     },
                                     __self: this
                                 }),
@@ -23026,12 +23028,12 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 166
+                                        lineNumber: 172
                                     },
                                     __self: this
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
-                                    path: "/directors/:name",
+                                    path: "/directors/:Name",
                                     render: ({ match , history  })=>{
                                         if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                             children: /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
@@ -23052,12 +23054,12 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 192
+                                        lineNumber: 198
                                     },
                                     __self: this
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
-                                    path: "/genres/:name",
+                                    path: "/genres/:Name",
                                     render: ({ match , history  })=>{
                                         if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                             children: /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
@@ -23078,7 +23080,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 220
+                                        lineNumber: 226
                                     },
                                     __self: this
                                 })
@@ -39886,7 +39888,7 @@ class MovieCard extends _reactDefault.default.Component {
 }
 MovieCard.propTypes = {
     movie: _propTypesDefault.default.shape({
-        Title: _propTypesDefault.default.string.isRequired,
+        Title: _propTypesDefault.default.number.isRequired,
         Year: _propTypesDefault.default.number.isRequired
     }).isRequired
 };
@@ -40014,7 +40016,7 @@ class MovieView extends _reactDefault.default.Component {
                                             lineNumber: 37
                                         },
                                         __self: this,
-                                        children: "ReleaseYear: "
+                                        children: "Release Year: "
                                     }),
                                     /*#__PURE__*/ _jsxRuntime.jsx("span", {
                                         className: "value",

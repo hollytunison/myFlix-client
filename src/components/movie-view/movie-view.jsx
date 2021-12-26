@@ -34,7 +34,7 @@ export class MovieView extends React.Component {
 								<span className='value'>{movie.Title}</span>
 							</div>
 							<div className='movie-year'>
-								<span className='year'>ReleaseYear: </span>
+								<span className='year'>Release Year: </span>
 								<span className='value'>{movie.Year}</span>
 							</div>
 							<div className='movie-description'>
