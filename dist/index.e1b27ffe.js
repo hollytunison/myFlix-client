@@ -22858,7 +22858,7 @@ class MainView extends _reactDefault.default.Component {
                                     lineNumber: 94
                                 },
                                 __self: this,
-                                children: "CinemaFlix"
+                                children: "Back to the 80s"
                             })
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Toggle, {
