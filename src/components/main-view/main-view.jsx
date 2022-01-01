@@ -104,7 +104,7 @@ export class MainView extends React.Component {
 									this.onLoggedOut();
 								}}
 							>
-								Login
+								Logout
 							</Nav.Link>
 						</Nav>
 					</Navbar.Collapse>

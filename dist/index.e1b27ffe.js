@@ -22912,7 +22912,7 @@ class MainView extends _reactDefault.default.Component {
                                             lineNumber: 101
                                         },
                                         __self: this,
-                                        children: "Login"
+                                        children: "Logout"
                                     })
                                 ]
                             })
