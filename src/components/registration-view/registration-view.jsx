@@ -41,11 +41,11 @@ export function RegistrationView(props) {
 	};
 
 	return (
-		<Container className='registerContainer'>
+		<Container className='registrationContainer'>
 			<Row>
 				<Col>
 					<CardGroup>
-						<Card className='registerCard'>
+						<Card className='registrationCard'>
 							<Card.Body>
 								<Card.Title className='text-center'>
 									Welcome to My 80s Vice!

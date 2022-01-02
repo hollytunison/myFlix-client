@@ -14,6 +14,7 @@ import {
 } from 'react-bootstrap';
 
 import './login-view.scss';
+import { Link } from 'react-router-dom';
 
 export function LoginView(props) {
 	const [username, setUsername] = useState('');
@@ -87,6 +88,11 @@ export function LoginView(props) {
 						>
 							Login
 						</Button>
+						<p className="mt-5 mx-auto">
+          New user? &nbsp;
+          <Link to="/register" className="btn btn-warning">register</Link>
+          &nbsp;
+        </p>
 					</Form>
 				</Card.Body>
 			</Card>

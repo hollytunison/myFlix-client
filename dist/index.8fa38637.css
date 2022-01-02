@@ -38,6 +38,12 @@
   margin-top: 100px;
   color: 3A3D47;
 }
+
+.pRegister {
+  padding: 24px;
+  margin-top: 24px;
+  border: blue;
+}
 .movieContainer {
   display: inline-block;
 }
@@ -173,7 +179,7 @@
   background: #3A3D47;
 }
 
-.registerCard {
+.registrationCard {
   width: 100%;
   max-width: 400px;
   margin: auto;
