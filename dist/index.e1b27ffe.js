@@ -22830,7 +22830,7 @@ class MainView extends _reactDefault.default.Component {
         });
     }
     render() {
-        const { movies , user , register  } = this.state;
+        const { movies , user  } = this.state;
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
@@ -22928,20 +22928,20 @@ class MainView extends _reactDefault.default.Component {
                 /*#__PURE__*/ _jsxRuntime.jsx("div", {
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 120
+                        lineNumber: 114
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 121
+                            lineNumber: 115
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                             className: "justify-content-md-center",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 122
+                                lineNumber: 116
                             },
                             __self: this,
                             children: [
@@ -22970,13 +22970,13 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 123
+                                        lineNumber: 117
                                     },
                                     __self: this
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
                                     exact: true,
-                                    path: "/register",
+                                    path: "/registration",
                                     render: ()=>{
                                         if (user) return(/*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Redirect, {
                                             to: "/"
@@ -22988,7 +22988,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 146
+                                        lineNumber: 140
                                     },
                                     __self: this
                                 }),
@@ -23009,7 +23009,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 159
+                                        lineNumber: 153
                                     },
                                     __self: this
                                 }),
@@ -23035,7 +23035,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 180
+                                        lineNumber: 174
                                     },
                                     __self: this
                                 }),
@@ -23061,7 +23061,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 206
+                                        lineNumber: 200
                                     },
                                     __self: this
                                 }),
@@ -23087,7 +23087,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 234
+                                        lineNumber: 228
                                     },
                                     __self: this
                                 })
@@ -27756,7 +27756,7 @@ function LoginView(props) {
     const [passwordErr, setPasswordErr] = _react.useState('');
     const handleSubmit = (e)=>{
         e.preventDefault();
-        /* Send a request to the server for authentication */ _axiosDefault.default.post('https://mysterious-plains-19334.herokuapp.com/login', {
+        /* Send a request to the server for authentication */ _axiosDefault.default.post('https://mysterious-plains-19334.herokuapp.com/register', {
             Username: username,
             Password: password
         }).then((response)=>{
@@ -41230,7 +41230,7 @@ function RegistrationView(props) {
     const handleSubmit = (e)=>{
         e.preventDefault();
         console.log(username, password, email, birthday);
-        _axiosDefault.default.post('https://mysterious-plains-19334.herokuapp.com/users', {
+        _axiosDefault.default.post('https://mysterious-plains-19334.herokuapp.com/register', {
             Username: username,
             Password: password,
             Email: email,

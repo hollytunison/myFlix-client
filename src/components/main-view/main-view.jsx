@@ -86,7 +86,7 @@ export class MainView extends React.Component {
 	}
 
 	render() {
-		const { movies, user, register } = this.state;
+		const { movies, user } = this.state;
 
 		return (
 			<Router>
@@ -105,13 +105,7 @@ export class MainView extends React.Component {
 						<Nav className='ms-auto'>
 							<Nav.Link href='/'>Movies</Nav.Link>
 							<Nav.Link href='/users/:username'>Profile</Nav.Link>
-							<Nav.Link
-								href='/'
-								onClick={() => {
-									this.onLoggedOut();
-								}}
-							>
-								Logout
+							<Nav.Link href='/'onClick={() => {this.onLoggedOut();}}	>Logout
 							</Nav.Link>
 						</Nav>
 					</Navbar.Collapse>
@@ -145,7 +139,7 @@ export class MainView extends React.Component {
 
 							<Route
 								exact
-								path='/register'
+								path='/registration'
 								render={() => {
 									if (user) return <Redirect to='/' />;
 									return (

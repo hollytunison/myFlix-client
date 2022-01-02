@@ -27,7 +27,7 @@ export function LoginView(props) {
 		e.preventDefault();
 		/* Send a request to the server for authentication */
 		axios
-			.post('https://mysterious-plains-19334.herokuapp.com/login', {
+			.post('https://mysterious-plains-19334.herokuapp.com/register', {
 				Username: username,
 				Password: password,
 			})
