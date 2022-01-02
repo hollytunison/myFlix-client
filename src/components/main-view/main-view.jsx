@@ -57,6 +57,13 @@ export class MainView extends React.Component {
 		}
 	}
 
+	//When a user successfully registers
+  onRegistration(register) {
+    this.setState({
+      register
+    });
+  }
+
 	/* When a user successfully logs in, this function updates the `user`
   property in state to that *particular user*/
 	onLoggedIn(authData) {
@@ -79,7 +86,7 @@ export class MainView extends React.Component {
 	}
 
 	render() {
-		const { movies, user } = this.state;
+		const { movies, user, register } = this.state;
 
 		return (
 			<Router>
@@ -137,6 +144,7 @@ export class MainView extends React.Component {
 							/>
 
 							<Route
+								exact
 								path='/register'
 								render={() => {
 									if (user) return <Redirect to='/' />;

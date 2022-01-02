@@ -79,21 +79,14 @@ export function LoginView(props) {
 							{passwordErr && <p>{passwordErr}</p>}
 						</Form.Group>
 
-						<Button
-							className='loginButton'
-							variant='secondary'
-							size='lg'
-							type='submit'
-							onClick={handleSubmit}
-						>
-							Login
-						</Button>
-						<p className="mt-5 mx-auto">
-          New user? &nbsp;
-          <Link to="/register" className="btn btn-warning">register</Link>
-          &nbsp;
-        </p>
-					</Form>
+						<Button className="loginButton" variant="dark" size="lg" type="submit" onClick={handleSubmit}>
+              Login
+            </Button>
+          </Form>
+          <Card.Subtitle className="mt-4 text-muted text-left">New user? Register account below.</Card.Subtitle>
+          <Link to={`/users`}>
+            <Button className="registerButton" variant="dark" size="lg">Register</Button>
+          </Link>
 				</Card.Body>
 			</Card>
 		</Container>
