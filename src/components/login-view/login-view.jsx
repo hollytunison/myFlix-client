@@ -44,7 +44,7 @@ export function LoginView(props) {
 			<Card className='loginCard'>
 				<Card.Body>
 					<Card.Title className='text-center'>
-						Welcome to Back to the 80s!
+						Welcome to My 80s Vice!
 					</Card.Title>
 					<Card.Subtitle className='mb-2 text-muted text-center'>
 						Please Login

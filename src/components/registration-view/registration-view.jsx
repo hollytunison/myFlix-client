@@ -48,7 +48,7 @@ export function RegistrationView(props) {
 						<Card className='registerCard'>
 							<Card.Body>
 								<Card.Title className='text-center'>
-									Welcome to CinemaFlix.
+									Welcome to My 80s Vice!
 								</Card.Title>
 								<Card.Subtitle className='mb-2 text-muted text-center'>
 									Please Register

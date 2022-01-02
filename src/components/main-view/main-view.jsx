@@ -91,7 +91,7 @@ export class MainView extends React.Component {
 					expand='md'
 				>
 					<Navbar.Brand href='/'>
-						<span className='brand-name'>Back to the 80s</span>
+						<span className='brand-name'>My 80s Vice</span>
 					</Navbar.Brand>
 					<Navbar.Toggle aria-controls='basic-navbar-nav' />
 					<Navbar.Collapse id='basic-navbar-nav'>

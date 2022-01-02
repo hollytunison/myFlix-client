@@ -22858,7 +22858,7 @@ class MainView extends _reactDefault.default.Component {
                                     lineNumber: 94
                                 },
                                 __self: this,
-                                children: "Back to the 80s"
+                                children: "My 80s Vice"
                             })
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Toggle, {
@@ -27786,7 +27786,7 @@ function LoginView(props) {
                             lineNumber: 46
                         },
                         __self: this,
-                        children: "Welcome to Back to the 80s!"
+                        children: "Welcome to My 80s Vice!"
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Subtitle, {
                         className: "mb-2 text-muted text-center",
@@ -41252,7 +41252,7 @@ function RegistrationView(props) {
                                         lineNumber: 50
                                     },
                                     __self: this,
-                                    children: "Welcome to CinemaFlix."
+                                    children: "Welcome to My 80s Vice!"
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Subtitle, {
                                     className: "mb-2 text-muted text-center",
