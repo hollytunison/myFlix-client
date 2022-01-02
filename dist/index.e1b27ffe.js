@@ -41219,14 +41219,14 @@ function RegistrationView(props) {
     const [username, setUsername] = _react.useState('');
     const [password, setPassword] = _react.useState('');
     const [email, setEmail] = _react.useState('');
-    const [birthday, setBirthday] = _react.useState('');
+    const [Birthday, setBirthday] = _react.useState('');
     const handleSubmit = (e)=>{
         e.preventDefault();
         _axiosDefault.default.post('https://mysterious-plains-19334.herokuapp.com/users', {
             Username: username,
             Password: password,
             Email: email,
-            Birthday: birthday
+            Birthday: Birthday
         }).then((response)=>{
             const data = response.data;
             console.log(data);
@@ -41443,7 +41443,7 @@ function RegistrationView(props) {
         })
     }));
 }
-_s(RegistrationView, "tdA1KK8yaZidqYo0wscqshHt/KE=");
+_s(RegistrationView, "/bjdktouC/q/NS53njZN/YkUYOE=");
 _c = RegistrationView;
 RegistrationView.propTypes = {
     onRegistration: _propTypesDefault.default.func.isRequired
