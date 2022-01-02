@@ -23,9 +23,8 @@ export function RegistrationView(props) {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(username, password, email, birthday);
 		axios
-			.post('https://mysterious-plains-19334.herokuapp.com/register', {
+			.post('https://mysterious-plains-19334.herokuapp.com/users', {
 				Username: username,
 				Password: password,
 				Email: email,
@@ -33,8 +32,11 @@ export function RegistrationView(props) {
 			})
 			.then((response) => {
 				const data = response.data;
-				props.onRegistration(data.Username);
-			})
+				console.log(data);
+				window.open('/', '_self'); // '_self' is necessary to open page in the current tab
+    })
+			// 	props.onRegistration(data.Username);
+			// })
 			.catch((e) => {
 				console.log('no such user');
 			});
@@ -99,7 +101,7 @@ export function RegistrationView(props) {
 									</Form.Group>
 
 									<Button
-										className='registerButton'
+										className='registrationButton'
 										variant='secondary'
 										size='lg'
 										type='submit'

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 import {
 	Navbar,
 	Nav,
@@ -14,7 +16,6 @@ import {
 } from 'react-bootstrap';
 
 import './login-view.scss';
-import { Link } from 'react-router-dom';
 
 export function LoginView(props) {
 	const [username, setUsername] = useState('');
@@ -27,7 +28,7 @@ export function LoginView(props) {
 		e.preventDefault();
 		/* Send a request to the server for authentication */
 		axios
-			.post('https://mysterious-plains-19334.herokuapp.com/register', {
+			.post('https://mysterious-plains-19334.herokuapp.com/login', {
 				Username: username,
 				Password: password,
 			})

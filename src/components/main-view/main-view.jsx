@@ -27,7 +27,7 @@ export class MainView extends React.Component {
 		super();
 		this.state = {
 			movies: [],
-			user: null,
+			user: null
 		};
 	}
 
@@ -57,13 +57,6 @@ export class MainView extends React.Component {
 		}
 	}
 
-	//When a user successfully registers
-  onRegistration(register) {
-    this.setState({
-      register
-    });
-  }
-
 	/* When a user successfully logs in, this function updates the `user`
   property in state to that *particular user*/
 	onLoggedIn(authData) {
@@ -89,66 +82,48 @@ export class MainView extends React.Component {
 		const { movies, user } = this.state;
 
 		return (
+			
 			<Router>
-				<Navbar
-					fixed='top'
-					className='mainnav py-3 py-lg-4'
-					bg='navColor'
-					variant='dark'
-					expand='md'
-				>
-					<Navbar.Brand href='/'>
-						<span className='brand-name'>My 80s Vice</span>
-					</Navbar.Brand>
-					<Navbar.Toggle aria-controls='basic-navbar-nav' />
-					<Navbar.Collapse id='basic-navbar-nav'>
-						<Nav className='ms-auto'>
-							<Nav.Link href='/'>Movies</Nav.Link>
-							<Nav.Link href='/users/:username'>Profile</Nav.Link>
-							<Nav.Link href='/'onClick={() => {this.onLoggedOut();}}	>Logout
-							</Nav.Link>
-						</Nav>
-					</Navbar.Collapse>
-				</Navbar>
+            
+            
+            <Navbar fixed="top" className="mainnav py-3 py-lg-4" bg="navColor" variant="dark" expand="md">
+                <Navbar.Brand href="/"><span className="brand-name">CinemaFlix</span></Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                  <Nav className="ms-auto">
+                    <Nav.Link href="/">Movies</Nav.Link>
+                    <Nav.Link href="/users/:username">Profile</Nav.Link>
+                    <Nav.Link href="/" onClick={() => { this.onLoggedOut() }} >Logout</Nav.Link>
+                  </Nav>
+                </Navbar.Collapse>
+            </Navbar>
+           
+          
+            <div>
+              <Container>
+                <Row className="justify-content-md-center">
 
-				<div>
-					<Container>
-						<Row className='justify-content-md-center'>
-							<Route
-								exact
-								path='/'
-								render={() => {
-									if (!user)
-										return (
-											<Col>
-												<LoginView
-													onLoggedIn={(user) => this.onLoggedIn(user)}
-												/>
-											</Col>
-										);
+                  <Route exact path="/" render={() => {
 
-									// Before the movies have been loaded
-									if (movies.length === 0) return <div className='main-view' />;
-									return movies.map((m) => (
-										<Col sm={6} md={4} lg={4} key={m._id}>
-											<MovieCard movie={m} />
-										</Col>
-									));
-								}}
-							/>
+                    if (!user) return <Col>
+                      <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+                    </Col>
 
-							<Route
-								exact
-								path='/registration'
-								render={() => {
-									if (user) return <Redirect to='/' />;
-									return (
-										<Col>
-											<RegistrationView />
-										</Col>
-									);
-								}}
-							/>
+                    // Before the movies have been loaded
+                    if (movies.length === 0) return (<div className="main-view" />);
+                    return movies.map(m => (
+                      <Col sm={6} md={4} lg={4} key={m._id}>
+                        <MovieCard movie={m} />
+                      </Col>
+                    ))
+                  }} />
+
+                  <Route path="/register" render={() => {
+                    if (user) return <Redirect to="/" />
+                    return <Col>
+                      <RegistrationView />
+                    </Col>
+                  }} />
 
 							<Route
 								path='/users/:username'
