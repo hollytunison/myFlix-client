@@ -28,22 +28,20 @@ export function RegistrationView(props) {
 				Username: username,
 				Password: password,
 				Email: email,
-				Birthday: Birthday,
+				Birthday: Birthday
 			})
 			.then((response) => {
 				const data = response.data;
 				console.log(data);
-				window.open('/', '_self'); // '_self' is necessary to open page in the current tab
     })
-			// 	props.onRegistration(data.Username);
-			// })
 			.catch((e) => {
-				console.log('no such user');
+				console.log('error registering user');
 			});
 	};
 
 	return (
 		<Container className='registrationContainer'>
+			
 			<Row>
 				<Col>
 					<CardGroup>
