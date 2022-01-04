@@ -70,6 +70,7 @@ export class MainView extends React.Component {
 		this.getMovies(authData.token);
 	}
 
+
 	onLoggedOut() {
 		localStorage.removeItem('token');
 		localStorage.removeItem('user');
@@ -80,6 +81,9 @@ export class MainView extends React.Component {
 
 	render() {
 		const { movies, user } = this.state;
+		
+
+		
 
 		return (
 			
