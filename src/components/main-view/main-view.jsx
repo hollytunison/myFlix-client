@@ -87,7 +87,7 @@ export class MainView extends React.Component {
             
             
             <Navbar fixed="top" className="mainnav py-3 py-lg-4" bg="navColor" variant="dark" expand="md">
-                <Navbar.Brand href="/"><span className="brand-name">CinemaFlix</span></Navbar.Brand>
+                <Navbar.Brand href="/"><span className="brand-name">My80sVice</span></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="ms-auto">
