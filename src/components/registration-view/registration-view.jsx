@@ -20,20 +20,16 @@ export function RegistrationView(props) {
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 	const [email, setEmail] = useState('');
+
 	const [birthday, setBirthday] = useState('');
-	const [values, setValues] = useState({
-		nameErr: '',
-		usernameErr: '',
-		passwordErr: '',
-		emailErr: '',
-	});
+	const [usernameError, setUsernameError] = useState(null);
+  const [emailError, setEmailError] = useState(null);
+  const [passwordError, setPasswordError] = useState(null);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		const isReq = validate();
-		if(isReq){
-		axios
-			.post('https://mysterious-plains-19334.herokuapp.com/users', {
+		console.log(username, password, email, birthday);
+		axios.post('https://mysterious-plains-19334.herokuapp.com/users', {
 				Username: username,
 				Password: password,
 				Email: email,
@@ -42,15 +38,34 @@ export function RegistrationView(props) {
 			.then((response) => {
 				const data = response.data;
 				console.log(data);
-				alert('Registration successful, please login!');
-				// successful register user, redirect to main view
-				window.open('/', '_self'); 
+				window.open('/', '_self');
 			})
 			.catch(response => {
 				console.error(response);
 				alert('unable to register');
 			});
+};
+
+const validate = (e) => {
+	let isValid = true;
+
+	//Conditions
+	if (username.trim().length < 5) {
+		setUsernameError("Username must have at least 5 characters.");
+		isValid = false;
 	}
+
+	if (password.trim().length < 5) {
+		setPasswordError("Your password must contain  at least 6 characters.");
+		isValid = false;
+	}
+
+	if (!email.includes(".") || !email.includes("@")) {
+		setEmailError("Enter a valid email");
+		isValid = false;
+	}
+
+	return isValid;
 };
 
 	return (
@@ -123,11 +138,4 @@ export function RegistrationView(props) {
 	);
 }
 
-RegistrationView.propTypes = {
-	register: PropTypes.shape({
-		Name: PropTypes.string.isRequired,
-		Username: PropTypes.string.isRequired,
-		Password: PropTypes.string.isRequired,
-		Email: PropTypes.string.isRequired
-	}),
-};
+
