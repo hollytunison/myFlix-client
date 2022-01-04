@@ -24,8 +24,31 @@ export function LoginView(props) {
 	const [usernameErr, setUsernameErr] = useState('');
 	const [passwordErr, setPasswordErr] = useState('');
 
+	// validate user inputs
+	const validate = () => {
+		let isReq = true;
+		if (!username) {
+			setUsernameErr('Username Required');
+			isReq = false;
+		} else if (username.length < 2) {
+			setUsernameErr('Username must be 2 characters long');
+			isReq = false;
+		}
+		if (!password) {
+			setPasswordErr('Password Required');
+			isReq = false;
+		} else if (password.length < 6) {
+			setPassword('Password must be 6 characters long');
+			isReq = false;
+		}
+
+		return isReq;
+	}
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		const isReq = validate();
+  	if(isReq) {
 		/* Send a request to the server for authentication */
 		axios
 			.post('https://mysterious-plains-19334.herokuapp.com/login', {
@@ -39,6 +62,7 @@ export function LoginView(props) {
 			.catch((e) => {
 				console.log('no such user');
 			});
+		}
 	};
 
 	return (
@@ -46,15 +70,14 @@ export function LoginView(props) {
 			<Card className='loginCard'>
 				<Card.Body>
 					<Card.Title className='text-center'>
-						Welcome to My 80s Vice!
-					</Card.Title>
+						Welcome to My 80 s Vice!
+					</Card.Title>{' '}
 					<Card.Subtitle className='mb-2 text-muted text-center'>
-						Please Login
+						Please Login{' '}
 					</Card.Subtitle>
-
 					<Form>
 						<Form.Group controlId='formUsername'>
-							<Form.Label>Username</Form.Label>
+							<Form.Label> Username </Form.Label>{' '}
 							<Form.Control
 								type='text'
 								placeholder='Enter username'
@@ -62,12 +85,11 @@ export function LoginView(props) {
 								onChange={(e) => setUsername(e.target.value)}
 								required
 							/>
-							{/* code added here to display validation error */}
-							{usernameErr && <p>{usernameErr}</p>}
+							{/* code added here to display validation error */}{' '}
+							{usernameErr && <p> {usernameErr} </p>}{' '}
 						</Form.Group>
-
 						<Form.Group controlId='formPassword'>
-							<Form.Label>Password</Form.Label>
+							<Form.Label> Password </Form.Label>{' '}
 							<Form.Control
 								className='mb-3'
 								type='password'
@@ -76,20 +98,31 @@ export function LoginView(props) {
 								onChange={(e) => setPassword(e.target.value)}
 								required
 							/>
-							{/* code added here to display validation error */}
-							{passwordErr && <p>{passwordErr}</p>}
+							{/* code added here to display validation error */}{' '}
+							{passwordErr && <p> {passwordErr} </p>}{' '}
 						</Form.Group>
-
-						<Button className="loginButton" variant="dark" size="lg" type="submit" onClick={handleSubmit}>
-              Login
-            </Button>
-          </Form>
-          <Card.Subtitle className="mt-4 text-muted text-left">New user? Register account below.</Card.Subtitle>
-          <Link to={`/users`}>
-            <Button className="registerButton" variant="dark" size="lg">Register</Button>
-          </Link>
-				</Card.Body>
-			</Card>
+						<Button
+							className='loginButton'
+							variant='dark'
+							size='lg'
+							type='submit'
+							onClick={handleSubmit}
+						>
+							Login{' '}
+						</Button>{' '}
+					</Form>{' '}
+					<Card.Subtitle className='mt-4 text-muted text-left'>
+						{' '}
+						New user ? Register account below.{' '}
+					</Card.Subtitle>{' '}
+					<Link to={`/users`}>
+						<Button className='registerButton' variant='dark' size='lg'>
+							{' '}
+							Register{' '}
+						</Button>{' '}
+					</Link>{' '}
+				</Card.Body>{' '}
+			</Card>{' '}
 		</Container>
 	);
 }
