@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import {
 	Navbar,
 	Nav,
@@ -20,10 +21,17 @@ export function RegistrationView(props) {
 	const [password, setPassword] = useState('');
 	const [email, setEmail] = useState('');
 	const [birthday, setBirthday] = useState('');
+	const [values, setValues] = useState({
+		nameErr: '',
+		usernameErr: '',
+		passwordErr: '',
+		emailErr: '',
+	});
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(username, password, email, birthday);
+		const isReq = validate();
+		if(isReq){
 		axios
 			.post('https://mysterious-plains-19334.herokuapp.com/users', {
 				Username: username,
@@ -33,30 +41,33 @@ export function RegistrationView(props) {
 			})
 			.then((response) => {
 				const data = response.data;
-				props.onRegistration(data.Username);
+				console.log(data);
+				alert('Registration successful, please login!');
+				// successful register user, redirect to main view
+				window.open('/', '_self'); 
 			})
-			.catch((e) => {
-				console.log('no such user');
+			.catch(response => {
+				console.error(response);
+				alert('unable to register');
 			});
-	};
+	}
+};
 
 	return (
-		<Container className='registerContainer'>
+		<Container className='registrationContainer'>
 			<Row>
 				<Col>
 					<CardGroup>
-						<Card className='registerCard'>
+						<Card className='registrationCard'>
 							<Card.Body>
 								<Card.Title className='text-center'>
-									Welcome to My 80s Vice!
+									Welcome to My 80 s Vice!
 								</Card.Title>
-								<Card.Subtitle className='mb-2 text-muted text-center'>
-									Please Register
-								</Card.Subtitle>
-
+								<Card.Subtitle className='mb-2 text-muted text-center'>Please Register</Card.Subtitle>
+							
 								<Form>
 									<Form.Group>
-										<Form.Label>Username</Form.Label>
+										<Form.Label> Username </Form.Label>
 										<Form.Control
 											type='text'
 											value={username}
@@ -67,7 +78,7 @@ export function RegistrationView(props) {
 									</Form.Group>
 
 									<Form.Group>
-										<Form.Label>Password</Form.Label>
+										<Form.Label> Password </Form.Label>
 										<Form.Control
 											type='password'
 											value={password}
@@ -78,7 +89,7 @@ export function RegistrationView(props) {
 									</Form.Group>
 
 									<Form.Group>
-										<Form.Label>Email</Form.Label>
+										<Form.Label> Email </Form.Label>
 										<Form.Control
 											type='email'
 											value={email}
@@ -89,24 +100,19 @@ export function RegistrationView(props) {
 									</Form.Group>
 
 									<Form.Group>
-										<Form.Label>Birthday</Form.Label>
+										<Form.Label> Birthday </Form.Label>
 										<Form.Control
 											className='mb-3'
 											type='date'
-											value={Birthday}
+											value={birthday}
 											onChange={(e) => setBirthday(e.target.value)}
 										/>
 									</Form.Group>
 
-									<Button
-										className='registerButton'
-										variant='secondary'
-										size='lg'
-										type='submit'
-										onClick={handleSubmit}
-									>
-										Register
-									</Button>
+									<Link to={`/`}>
+            <Button variant='dark' type='submit' onClick={handleSubmit}>Submit</Button>
+          </Link>
+
 								</Form>
 							</Card.Body>
 						</Card>
@@ -118,5 +124,10 @@ export function RegistrationView(props) {
 }
 
 RegistrationView.propTypes = {
-	onRegistration: PropTypes.func.isRequired,
+	register: PropTypes.shape({
+		Name: PropTypes.string.isRequired,
+		Username: PropTypes.string.isRequired,
+		Password: PropTypes.string.isRequired,
+		Email: PropTypes.string.isRequired
+	}),
 };
