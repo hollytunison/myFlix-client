@@ -28,12 +28,12 @@ export function RegistrationView(props) {
 				Username: username,
 				Password: password,
 				Email: email,
-				Birthday: Birthday
+				Birthday: Birthday,
 			})
 			.then((response) => {
 				const data = response.data;
 				console.log(data);
-    })
+			})
 			.catch((e) => {
 				console.log('error registering user');
 			});
@@ -41,22 +41,20 @@ export function RegistrationView(props) {
 
 	return (
 		<Container className='registrationContainer'>
-			
 			<Row>
 				<Col>
 					<CardGroup>
 						<Card className='registrationCard'>
 							<Card.Body>
 								<Card.Title className='text-center'>
-									Welcome to My 80s Vice!
-								</Card.Title>
+									Welcome to My 80 s Vice!
+								</Card.Title>{' '}
 								<Card.Subtitle className='mb-2 text-muted text-center'>
-									Please Register
+									Please Register{' '}
 								</Card.Subtitle>
-
 								<Form>
 									<Form.Group>
-										<Form.Label>Username</Form.Label>
+										<Form.Label> Username </Form.Label>{' '}
 										<Form.Control
 											type='text'
 											value={username}
@@ -65,9 +63,8 @@ export function RegistrationView(props) {
 											required
 										/>
 									</Form.Group>
-
 									<Form.Group>
-										<Form.Label>Password</Form.Label>
+										<Form.Label> Password </Form.Label>{' '}
 										<Form.Control
 											type='password'
 											value={password}
@@ -76,9 +73,8 @@ export function RegistrationView(props) {
 											required
 										/>
 									</Form.Group>
-
 									<Form.Group>
-										<Form.Label>Email</Form.Label>
+										<Form.Label> Email </Form.Label>{' '}
 										<Form.Control
 											type='email'
 											value={email}
@@ -87,17 +83,15 @@ export function RegistrationView(props) {
 											required
 										/>
 									</Form.Group>
-
 									<Form.Group>
-										<Form.Label>Birthday</Form.Label>
+										<Form.Label> Birthday </Form.Label>{' '}
 										<Form.Control
 											className='mb-3'
 											type='date'
 											value={Birthday}
 											onChange={(e) => setBirthday(e.target.value)}
-										/>
+										/>{' '}
 									</Form.Group>
-
 									<Button
 										className='registrationButton'
 										variant='secondary'
@@ -105,14 +99,14 @@ export function RegistrationView(props) {
 										type='submit'
 										onClick={handleSubmit}
 									>
-										Register
-									</Button>
-								</Form>
-							</Card.Body>
-						</Card>
-					</CardGroup>
-				</Col>
-			</Row>
+										Register{' '}
+									</Button>{' '}
+								</Form>{' '}
+							</Card.Body>{' '}
+						</Card>{' '}
+					</CardGroup>{' '}
+				</Col>{' '}
+			</Row>{' '}
 		</Container>
 	);
 }
