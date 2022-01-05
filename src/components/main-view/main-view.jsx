@@ -82,9 +82,6 @@ export class MainView extends React.Component {
 	render() {
 		const { movies, user } = this.state;
 		
-
-		
-
 		return (
 			
 			<Router>
