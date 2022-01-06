@@ -39848,7 +39848,7 @@ var _reactRouterDom = require("react-router-dom");
 var _movieCardScss = require("./movie-card.scss");
 class MovieCard extends _reactDefault.default.Component {
     render() {
-        const { movie  } = this.props;
+        const { movie , genre , director  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
             className: "movieContainer",
             __source: {
@@ -39946,7 +39946,7 @@ class MovieCard extends _reactDefault.default.Component {
 MovieCard.propTypes = {
     movie: _propTypesDefault.default.shape({
         Title: _propTypesDefault.default.string.isRequired,
-        Year: _propTypesDefault.default.string.isRequired
+        Year: _propTypesDefault.default.number.isRequired
     }).isRequired
 };
 

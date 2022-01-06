@@ -7,7 +7,7 @@ import './movie-card.scss';
 
 export class MovieCard extends React.Component {
 	render() {
-		const { movie } = this.props;
+		const { movie, genre, director } = this.props;
 
 		return (
 			<Container className='movieContainer'>
@@ -41,6 +41,6 @@ export class MovieCard extends React.Component {
 MovieCard.propTypes = {
 	movie: PropTypes.shape({
 		Title: PropTypes.string.isRequired,
-		Year: PropTypes.string.isRequired,
+		Year: PropTypes.number.isRequired,
 	}).isRequired,
 };
