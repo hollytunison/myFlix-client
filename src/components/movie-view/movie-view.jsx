@@ -6,6 +6,14 @@ import './movie-view.scss';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
 export class MovieView extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			genre: null,
+		};
+	}
+
+
 	addToFavs(movieId) {
 		const username = localStorage.getItem('user');
 		const token = localStorage.getItem('token');
@@ -25,6 +33,19 @@ export class MovieView extends React.Component {
 			.catch(function (error) {
 				console.log(error);
 			});
+	}
+
+	getGenre() {
+		//fetch genre from API
+		//set state to retrieved genre
+
+	}
+
+	componentDidMount() {
+		let accessToken = localStorage.getItem('token');
+		
+			this.getGenre(accessToken);
+
 	}
 
 	render() {
@@ -55,10 +76,10 @@ export class MovieView extends React.Component {
 								<span className='value'> {movie.Description} </span>
 							</div>
 
-							<div className='movie-genre'>
+							{ this.state.genre && <div className='movie-genre'>
 								<span className='genre'> Genre: </span>
 								<span className='value'> {movie.Genre.Name} </span>
-							</div>
+							</div> }
 
 							<div className='movie-director'>
 								<span className='director'> Director: </span>
@@ -109,14 +130,10 @@ export class MovieView extends React.Component {
 MovieView.propTypes = {
 	movie: PropTypes.shape({
 		Title: PropTypes.string.isRequired,
-		Year: PropTypes.number.isRequired,
+		Year: PropTypes.string.isRequired,
 		Description: PropTypes.string.isRequired,
-		Genre: PropTypes.shape({
-			Name: PropTypes.string.isRequired,
-		}),
-		Director: PropTypes.shape({
-			Name: PropTypes.string.isRequired,
-		}),
+		Genre: PropTypes.string.isRequired,
+		Director: PropTypes.string.isRequired,
 		Actors: PropTypes.array.isRequired,
 		ImagePath: PropTypes.string.isRequired,
 	}).isRequired,
