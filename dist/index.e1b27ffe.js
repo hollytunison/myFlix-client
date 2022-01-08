@@ -956,19 +956,26 @@ var _indexScss = require("./index.scss");
 // Main component (will eventually use all the others)
 class MyFlixApplication extends _reactDefault.default.Component {
     render() {
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
-            fluid: true,
+        return(/*#__PURE__*/ _jsxRuntime.jsx(_reactDefault.default.Fragment, {
             __source: {
                 fileName: "src/index.jsx",
                 lineNumber: 15
             },
             __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsx(_mainView.MainView, {
+            children: /*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
+                fluid: true,
                 __source: {
                     fileName: "src/index.jsx",
                     lineNumber: 16
                 },
-                __self: this
+                __self: this,
+                children: /*#__PURE__*/ _jsxRuntime.jsx(_mainView.MainView, {
+                    __source: {
+                        fileName: "src/index.jsx",
+                        lineNumber: 17
+                    },
+                    __self: this
+                })
             })
         }));
     }
