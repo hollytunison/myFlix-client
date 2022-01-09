@@ -10,11 +10,25 @@ export class MovieView extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			genre: null,
+			movie: null,
 		};
 	}
 
+	addFavoriteMovie() {
+		const token = localStorage.getItem('token');
+		const username = localStorage.getItem('user');
 
+		axios.post(`https://mysterious-plains-19334.herokuapp.com/users/${username}/movies/${this.props.movie._id}`, {}, {
+				headers: { Authorization: `Bearer ${token}` },
+				method: 'POST'
+		})
+				.then(response => {
+						alert(`Added to Favorites List`)
+				})
+				.catch(function (error) {
+						console.log(error);
+				});
+};
 
 	// getUser(token) {
 	// 	const username = localStorage.getItem('user');
@@ -114,6 +128,8 @@ export class MovieView extends React.Component {
 								>
 									Back
 								</Button>
+								<Button variant="outline-primary" className="btn-outline-light" value={movie._id} onClick={(e) => this.addFavoriteMovie(e, movie)}>Add to Favorites</Button>
+
 							</div>
 						</div>
 					</Col>
