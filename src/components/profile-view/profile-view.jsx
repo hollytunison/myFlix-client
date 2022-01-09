@@ -50,7 +50,7 @@ export class ProfileView extends React.Component {
 	getUser(token) {
 		const username = localStorage.getItem('user');
 		axios
-			.get(`https://immense-reef-38292.herokuapp.com/users/${username}`, {
+			.get(`https://mysterious-plains-19334.herokuapp.com/users/${username}`, {
 				headers: { Authorization: `Bearer ${token}` },
 			})
 			.then((response) => {

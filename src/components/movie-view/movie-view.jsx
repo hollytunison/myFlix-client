@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import './movie-view.scss';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button, Image } from 'react-bootstrap';
 
 export class MovieView extends React.Component {
 	constructor() {
@@ -14,21 +15,21 @@ export class MovieView extends React.Component {
 	}
 
 
-	addToFavs(movieId) {
-		const username = localStorage.getItem('user');
-		const token = localStorage.getItem('token');
 
+	getUser(token) {
+		const username = localStorage.getItem('user');
 		axios
-			.post(
-				`https://mysterious-plains-19334.herokuapp.com/users/${username}/movies/` +
-					movieId,
-				{},
-				{
-					headers: { Authorization: `Bearer ${token}` },
-				}
-			)
+			.get(`https://mysterious-plains-19334.herokuapp.com/genres/${Name}`, {
+				headers: { Authorization: `Bearer ${token}` },
+			})
 			.then((response) => {
-				console.log(response);
+				this.setState({
+					Username: response.data.Username,
+					Password: response.data.Password,
+					Email: response.data.Email,
+					Birthday: response.data.Birthday,
+					FavoriteMovies: response.data.FavoriteMovies,
+				});
 			})
 			.catch(function (error) {
 				console.log(error);
