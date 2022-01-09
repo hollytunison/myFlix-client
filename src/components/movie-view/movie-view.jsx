@@ -144,8 +144,6 @@ MovieView.propTypes = {
 		Title: PropTypes.string.isRequired,
 		Year: PropTypes.string.isRequired,
 		Description: PropTypes.string.isRequired,
-		Genre: PropTypes.string.isRequired,
-		Director: PropTypes.string.isRequired,
 		Actors: PropTypes.array.isRequired,
 		ImagePath: PropTypes.string.isRequired,
 	}).isRequired,

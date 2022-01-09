@@ -40338,8 +40338,6 @@ MovieView.propTypes = {
         Title: _propTypesDefault.default.string.isRequired,
         Year: _propTypesDefault.default.string.isRequired,
         Description: _propTypesDefault.default.string.isRequired,
-        Genre: _propTypesDefault.default.string.isRequired,
-        Director: _propTypesDefault.default.string.isRequired,
         Actors: _propTypesDefault.default.array.isRequired,
         ImagePath: _propTypesDefault.default.string.isRequired
     }).isRequired
