@@ -1,83 +1,59 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
 
 import './genre-view.scss';
 import { Container, Row, Col, Button } from 'react-bootstrap';
+import axios from 'axios';
 
-export class GenreView extends React.Component {
-	constructor() {
-		super();
-		this.state = {
-			genre: null,
-		};
-	}
+	const GenreView =() => {
 
-	componentDidMount() {
-		const accessToken = localStorage.getItem('token');
-		this.getGenre(accessToken);
-}
+		const [genre,setGenre]=useState({});
+		
 
-getGenre(token) {
-		const { genre } = this.props;
-		axios.get(`https://mysterious-plains-19334.herokuapp.com/genres/${genre.Name}`, {
-				headers: { Authorization: `Bearer ${token}` }
-		})
-				.then((response) => {
-						this.setState({
-								Description: response.data.Description,
-								Movies: response.data.Movies,
-						});
-				})
-				.catch(function (error) {
-						console.log(error);
-				})
-}
+		let {Name} = useParams();
+		useEffect(()=>{
 
-render() {
-	const { genre , onBackClick } = this.props;
+			const token =localStorage.getItem('token');
+			axios
+			.get('https://mysterious-plains-19334.herokuapp.com/genres'+Name, {
+				headers: { Authorization: `Bearer ${token}` },
+			})
+			.then((response) => {
+				// Assigns the result to the state
+				setGenre(response.data)
+				console.log(response.data)
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+			
 
-	return (
-		<Container className='genreContainer'>
-			<Row>
-				<Col>
-					<div className='genre-view'>
-						<div className='genre-name'>
-							<span className='name'>Name:</span>
-							<span className='value'>{genre.Name}</span>
-						</div>
+		},[])
+		return (
+			<Container className="genreContainer">
+        <Row>
+          <Col>
+            <div className="genre-view">
+              <div className="genre-name">
+                <span className="name">Name:</span>
+                <span className="value">{genre.Name}</span>
+              </div>
 
-						<div className='genre-description'>
-							<span className='description'>Description:</span>
-							<span className='value'>{genre.Description}</span>
-						</div>
+              <div className="genre-description">
+                <span className="description">Description:</span>
+                <span className="value">{genre.Description}</span>
+              </div>
 
-						<div className='genre-button-div'>
-							<Button
-								className='genre-button'
-								variant='secondary'
-								className='mt-3'
-								onClick={() => {
-									onBackClick(null);
-								}}
-							>
-								Back
-							</Button>
-						</div>
-					</div>
-				</Col>
-			</Row>
-		</Container>
-	);
-}
-}
+              {/* <div className="genre-button-div">
+                <Button className="genre-button" variant="secondary" className="mt-3" onClick={() => { onBackClick(null); }}>Back</Button>
+              </div> */}
+              
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
 
-GenreView.propTypes = {
-movie: PropTypes.shape({
-	Genre: PropTypes.shape({
-		Name: PropTypes.string.isRequired,
-		Description: PropTypes.string.isRequired,
-	}).isRequired,
-}),
-};
+export default GenreView;

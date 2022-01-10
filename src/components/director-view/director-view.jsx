@@ -51,10 +51,11 @@ import axios from 'axios';
 								<span className='value'>{director.Birth}</span>
 							</div>
 
-							<div className='director-button-div'>
+							<div className='movie-button-div'>
 								<Button
-									className='director-button mt-3'
-									variant='secondary'
+									className='movie-button'
+									bg='dark'
+									variant='dark'
 									onClick={() => {
 										onBackClick(null);
 									}}

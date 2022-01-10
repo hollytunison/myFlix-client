@@ -22780,6 +22780,7 @@ var _directorView = require("../director-view/director-view");
 var _directorViewDefault = parcelHelpers.interopDefault(_directorView);
 //importing the director-view into the main-view
 var _genreView = require("../genre-view/genre-view");
+var _genreViewDefault = parcelHelpers.interopDefault(_genreView);
 //importing the registration view into the main-view
 var _registrationView = require("../registration-view/registration-view");
 var _reactBootstrap = require("react-bootstrap");
@@ -23079,7 +23080,7 @@ class MainView extends _reactDefault.default.Component {
                                         }));
                                         return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                             md: 8,
-                                            children: /*#__PURE__*/ _jsxRuntime.jsx(_genreView.GenreView, {
+                                            children: /*#__PURE__*/ _jsxRuntime.jsx(_genreViewDefault.default, {
                                                 genre: movies.find((m)=>m.Genre.Name === match.params.name
                                                 ).Genre,
                                                 onBackClick: ()=>history.goBack()
@@ -41097,15 +41098,16 @@ const DirectorView = ()=>{
                             ]
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                            className: "director-button-div",
+                            className: "movie-button-div",
                             __source: {
                                 fileName: "src/components/director-view/director-view.jsx",
                                 lineNumber: 54
                             },
                             __self: undefined,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                                className: "director-button mt-3",
-                                variant: "secondary",
+                                className: "movie-button",
+                                bg: "dark",
+                                variant: "dark",
                                 onClick: ()=>{
                                     onBackClick(null);
                                 },
@@ -41153,173 +41155,139 @@ $parcel$ReactRefreshHelpers$ec38.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "GenreView", ()=>GenreView
-);
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _reactRouterDom = require("react-router-dom");
-var _axios = require("axios");
-var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _genreViewScss = require("./genre-view.scss");
 var _reactBootstrap = require("react-bootstrap");
-class GenreView extends _reactDefault.default.Component {
-    constructor(){
-        super();
-        this.state = {
-            genre: null
-        };
-    }
-    componentDidMount() {
-        const accessToken = localStorage.getItem('token');
-        this.getGenre(accessToken);
-    }
-    getGenre(token) {
-        const { genre  } = this.props;
-        _axiosDefault.default.get(`https://mysterious-plains-19334.herokuapp.com/genres/${genre.Name}`, {
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _s = $RefreshSig$();
+const GenreView = ()=>{
+    _s();
+    const [genre, setGenre] = _react.useState({
+    });
+    let { Name  } = _reactRouterDom.useParams();
+    _react.useEffect(()=>{
+        const token = localStorage.getItem('token');
+        _axiosDefault.default.get('https://mysterious-plains-19334.herokuapp.com/genres' + Name, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
         }).then((response)=>{
-            this.setState({
-                Description: response.data.Description,
-                Movies: response.data.Movies
-            });
+            // Assigns the result to the state
+            setGenre(response.data);
+            console.log(response.data);
         }).catch(function(error) {
             console.log(error);
         });
-    }
-    render() {
-        const { genre , onBackClick  } = this.props;
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
-            className: "genreContainer",
+    }, []);
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
+        className: "genreContainer",
+        __source: {
+            fileName: "src/components/genre-view/genre-view.jsx",
+            lineNumber: 34
+        },
+        __self: undefined,
+        children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
-                lineNumber: 42
+                lineNumber: 35
             },
-            __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+            __self: undefined,
+            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                 __source: {
                     fileName: "src/components/genre-view/genre-view.jsx",
-                    lineNumber: 43
+                    lineNumber: 36
                 },
-                __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                __self: undefined,
+                children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                    className: "genre-view",
                     __source: {
                         fileName: "src/components/genre-view/genre-view.jsx",
-                        lineNumber: 44
+                        lineNumber: 37
                     },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                        className: "genre-view",
-                        __source: {
-                            fileName: "src/components/genre-view/genre-view.jsx",
-                            lineNumber: 45
-                        },
-                        __self: this,
-                        children: [
-                            /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                                className: "genre-name",
-                                __source: {
-                                    fileName: "src/components/genre-view/genre-view.jsx",
-                                    lineNumber: 46
-                                },
-                                __self: this,
-                                children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                        className: "name",
-                                        __source: {
-                                            fileName: "src/components/genre-view/genre-view.jsx",
-                                            lineNumber: 47
-                                        },
-                                        __self: this,
-                                        children: "Name:"
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                        className: "value",
-                                        __source: {
-                                            fileName: "src/components/genre-view/genre-view.jsx",
-                                            lineNumber: 48
-                                        },
-                                        __self: this,
-                                        children: genre.Name
-                                    })
-                                ]
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                                className: "genre-description",
-                                __source: {
-                                    fileName: "src/components/genre-view/genre-view.jsx",
-                                    lineNumber: 51
-                                },
-                                __self: this,
-                                children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                        className: "description",
-                                        __source: {
-                                            fileName: "src/components/genre-view/genre-view.jsx",
-                                            lineNumber: 52
-                                        },
-                                        __self: this,
-                                        children: "Description:"
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                        className: "value",
-                                        __source: {
-                                            fileName: "src/components/genre-view/genre-view.jsx",
-                                            lineNumber: 53
-                                        },
-                                        __self: this,
-                                        children: genre.Description
-                                    })
-                                ]
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                className: "genre-button-div",
-                                __source: {
-                                    fileName: "src/components/genre-view/genre-view.jsx",
-                                    lineNumber: 56
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                                    className: "genre-button",
-                                    variant: "secondary",
-                                    className: "mt-3",
-                                    onClick: ()=>{
-                                        onBackClick(null);
-                                    },
+                    __self: undefined,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                            className: "genre-name",
+                            __source: {
+                                fileName: "src/components/genre-view/genre-view.jsx",
+                                lineNumber: 38
+                            },
+                            __self: undefined,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                    className: "name",
                                     __source: {
                                         fileName: "src/components/genre-view/genre-view.jsx",
-                                        lineNumber: 57
+                                        lineNumber: 39
                                     },
-                                    __self: this,
-                                    children: "Back"
+                                    __self: undefined,
+                                    children: "Name:"
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                    className: "value",
+                                    __source: {
+                                        fileName: "src/components/genre-view/genre-view.jsx",
+                                        lineNumber: 40
+                                    },
+                                    __self: undefined,
+                                    children: genre.Name
                                 })
-                            })
-                        ]
-                    })
+                            ]
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                            className: "genre-description",
+                            __source: {
+                                fileName: "src/components/genre-view/genre-view.jsx",
+                                lineNumber: 43
+                            },
+                            __self: undefined,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                    className: "description",
+                                    __source: {
+                                        fileName: "src/components/genre-view/genre-view.jsx",
+                                        lineNumber: 44
+                                    },
+                                    __self: undefined,
+                                    children: "Description:"
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                    className: "value",
+                                    __source: {
+                                        fileName: "src/components/genre-view/genre-view.jsx",
+                                        lineNumber: 45
+                                    },
+                                    __self: undefined,
+                                    children: genre.Description
+                                })
+                            ]
+                        })
+                    ]
                 })
             })
-        }));
-    }
-}
-GenreView.propTypes = {
-    movie: _propTypesDefault.default.shape({
-        Genre: _propTypesDefault.default.shape({
-            Name: _propTypesDefault.default.string.isRequired,
-            Description: _propTypesDefault.default.string.isRequired
-        }).isRequired
-    })
+        })
+    }));
 };
+_s(GenreView, "ZGmOYoBbfKhlbW5Yp6JG83q3Hrc=", false, function() {
+    return [_reactRouterDom.useParams];
+});
+_c = GenreView;
+exports.default = GenreView;
+var _c;
+$RefreshReg$(_c, "GenreView");
 
   $parcel$ReactRefreshHelpers$ec38.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"6Ds2u","react":"4mchR","prop-types":"2bysO","react-router-dom":"etVME","axios":"1IeuP","./genre-view.scss":"hKWHe","react-bootstrap":"9qMdX","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"hKWHe":[function() {},{}],"lGbHG":[function(require,module,exports) {
+},{"react/jsx-runtime":"6Ds2u","react":"4mchR","prop-types":"2bysO","react-router-dom":"etVME","axios":"1IeuP","react-bootstrap":"9qMdX","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","./genre-view.scss":"hKWHe"}],"hKWHe":[function() {},{}],"lGbHG":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$00e7 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

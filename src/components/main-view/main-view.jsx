@@ -16,7 +16,7 @@ import { ProfileView } from '../profile-view/profile-view';
 //importing the director-view into the main-view
 import DirectorView from '../director-view/director-view';
 //importing the director-view into the main-view
-import  {GenreView}  from '../genre-view/genre-view';
+import GenreView from '../genre-view/genre-view';
 //importing the registration view into the main-view
 import { RegistrationView } from '../registration-view/registration-view';
 
