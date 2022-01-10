@@ -41173,7 +41173,7 @@ const GenreView = ()=>{
     let { Name  } = _reactRouterDom.useParams();
     _react.useEffect(()=>{
         const token = localStorage.getItem('token');
-        _axiosDefault.default.get('https://mysterious-plains-19334.herokuapp.com/genres' + Name, {
+        _axiosDefault.default.get('https://mysterious-plains-19334.herokuapp.com/genres/' + Name, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
