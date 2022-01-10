@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
 
 import './genre-view.scss';
 import { Container, Row, Col, Button } from 'react-bootstrap';
@@ -45,9 +47,11 @@ import axios from 'axios';
                 <span className="value">{genre.Description}</span>
               </div>
 
-              <div className="genre-button-div">
-                <Button className="genre-button" variant="secondary" className="mt-3" onClick={() => { onBackClick(null); }}>Back</Button>
-              </div>
+              <Link to='/'>
+              <Button className='ml-auto btn btn-dark'>
+                Back to Movies
+              </Button>
+              </Link>
               
             </div>
           </Col>

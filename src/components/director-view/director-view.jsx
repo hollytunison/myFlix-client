@@ -1,6 +1,7 @@
 import React,{useState, useEffect}from 'react';
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import './director-view.scss';
 import { Container, Row, Col, Button } from 'react-bootstrap';
@@ -51,18 +52,11 @@ import axios from 'axios';
 								<span className='value'>{director.Birth}</span>
 							</div>
 
-							<div className='movie-button-div'>
-								<Button
-									className='movie-button'
-									bg='dark'
-									variant='dark'
-									onClick={() => {
-										onBackClick(null);
-									}}
-								>
-									Back
-								</Button>
-							</div>
+							<Link to='/'>
+              <Button className='ml-auto btn btn-dark'>
+                Back to Movies
+              </Button>
+              </Link>
 						</div>
 					</Col>
 				</Row>

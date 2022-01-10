@@ -40990,26 +40990,26 @@ const DirectorView = ()=>{
         className: "directorContainer",
         __source: {
             fileName: "src/components/director-view/director-view.jsx",
-            lineNumber: 35
+            lineNumber: 36
         },
         __self: undefined,
         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
             __source: {
                 fileName: "src/components/director-view/director-view.jsx",
-                lineNumber: 36
+                lineNumber: 37
             },
             __self: undefined,
             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                 __source: {
                     fileName: "src/components/director-view/director-view.jsx",
-                    lineNumber: 37
+                    lineNumber: 38
                 },
                 __self: undefined,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
                     className: "director-view",
                     __source: {
                         fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 38
+                        lineNumber: 39
                     },
                     __self: undefined,
                     children: [
@@ -41017,7 +41017,7 @@ const DirectorView = ()=>{
                             className: "director-name",
                             __source: {
                                 fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 39
+                                lineNumber: 40
                             },
                             __self: undefined,
                             children: [
@@ -41025,7 +41025,7 @@ const DirectorView = ()=>{
                                     className: "name",
                                     __source: {
                                         fileName: "src/components/director-view/director-view.jsx",
-                                        lineNumber: 40
+                                        lineNumber: 41
                                     },
                                     __self: undefined,
                                     children: "Name: "
@@ -41034,7 +41034,7 @@ const DirectorView = ()=>{
                                     className: "value",
                                     __source: {
                                         fileName: "src/components/director-view/director-view.jsx",
-                                        lineNumber: 41
+                                        lineNumber: 42
                                     },
                                     __self: undefined,
                                     children: director.Name
@@ -41045,7 +41045,7 @@ const DirectorView = ()=>{
                             className: "director-bio",
                             __source: {
                                 fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 44
+                                lineNumber: 45
                             },
                             __self: undefined,
                             children: [
@@ -41053,7 +41053,7 @@ const DirectorView = ()=>{
                                     className: "bio",
                                     __source: {
                                         fileName: "src/components/director-view/director-view.jsx",
-                                        lineNumber: 45
+                                        lineNumber: 46
                                     },
                                     __self: undefined,
                                     children: "Bio: "
@@ -41062,7 +41062,7 @@ const DirectorView = ()=>{
                                     className: "value",
                                     __source: {
                                         fileName: "src/components/director-view/director-view.jsx",
-                                        lineNumber: 46
+                                        lineNumber: 47
                                     },
                                     __self: undefined,
                                     children: director.Bio
@@ -41073,7 +41073,7 @@ const DirectorView = ()=>{
                             className: "director-birth",
                             __source: {
                                 fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 49
+                                lineNumber: 50
                             },
                             __self: undefined,
                             children: [
@@ -41081,7 +41081,7 @@ const DirectorView = ()=>{
                                     className: "birth",
                                     __source: {
                                         fileName: "src/components/director-view/director-view.jsx",
-                                        lineNumber: 50
+                                        lineNumber: 51
                                     },
                                     __self: undefined,
                                     children: "Birth: "
@@ -41090,33 +41090,28 @@ const DirectorView = ()=>{
                                     className: "value",
                                     __source: {
                                         fileName: "src/components/director-view/director-view.jsx",
-                                        lineNumber: 51
+                                        lineNumber: 52
                                     },
                                     __self: undefined,
                                     children: director.Birth
                                 })
                             ]
                         }),
-                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                            className: "movie-button-div",
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                            to: "/",
                             __source: {
                                 fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 54
+                                lineNumber: 55
                             },
                             __self: undefined,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                                className: "movie-button",
-                                bg: "dark",
-                                variant: "dark",
-                                onClick: ()=>{
-                                    onBackClick(null);
-                                },
+                                className: "ml-auto btn btn-dark",
                                 __source: {
                                     fileName: "src/components/director-view/director-view.jsx",
-                                    lineNumber: 55
+                                    lineNumber: 56
                                 },
                                 __self: undefined,
-                                children: "Back"
+                                children: "Back to Movies"
                             })
                         })
                     ]
@@ -41146,7 +41141,7 @@ $RefreshReg$(_c, "DirectorView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"6Ds2u","react":"4mchR","prop-types":"2bysO","./director-view.scss":"fYPph","react-bootstrap":"9qMdX","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","react-router-dom":"etVME","axios":"1IeuP"}],"fYPph":[function() {},{}],"eGJ1e":[function(require,module,exports) {
+},{"react/jsx-runtime":"6Ds2u","react":"4mchR","react-router-dom":"etVME","prop-types":"2bysO","./director-view.scss":"fYPph","react-bootstrap":"9qMdX","axios":"1IeuP","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"fYPph":[function() {},{}],"eGJ1e":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ec38 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41189,26 +41184,26 @@ const GenreView = ()=>{
         className: "genreContainer",
         __source: {
             fileName: "src/components/genre-view/genre-view.jsx",
-            lineNumber: 34
+            lineNumber: 36
         },
         __self: undefined,
         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
-                lineNumber: 35
+                lineNumber: 37
             },
             __self: undefined,
             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                 __source: {
                     fileName: "src/components/genre-view/genre-view.jsx",
-                    lineNumber: 36
+                    lineNumber: 38
                 },
                 __self: undefined,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
                     className: "genre-view",
                     __source: {
                         fileName: "src/components/genre-view/genre-view.jsx",
-                        lineNumber: 37
+                        lineNumber: 39
                     },
                     __self: undefined,
                     children: [
@@ -41216,7 +41211,7 @@ const GenreView = ()=>{
                             className: "genre-name",
                             __source: {
                                 fileName: "src/components/genre-view/genre-view.jsx",
-                                lineNumber: 38
+                                lineNumber: 40
                             },
                             __self: undefined,
                             children: [
@@ -41224,7 +41219,7 @@ const GenreView = ()=>{
                                     className: "name",
                                     __source: {
                                         fileName: "src/components/genre-view/genre-view.jsx",
-                                        lineNumber: 39
+                                        lineNumber: 41
                                     },
                                     __self: undefined,
                                     children: "Name:"
@@ -41233,7 +41228,7 @@ const GenreView = ()=>{
                                     className: "value",
                                     __source: {
                                         fileName: "src/components/genre-view/genre-view.jsx",
-                                        lineNumber: 40
+                                        lineNumber: 42
                                     },
                                     __self: undefined,
                                     children: genre.Name
@@ -41244,7 +41239,7 @@ const GenreView = ()=>{
                             className: "genre-description",
                             __source: {
                                 fileName: "src/components/genre-view/genre-view.jsx",
-                                lineNumber: 43
+                                lineNumber: 45
                             },
                             __self: undefined,
                             children: [
@@ -41252,7 +41247,7 @@ const GenreView = ()=>{
                                     className: "description",
                                     __source: {
                                         fileName: "src/components/genre-view/genre-view.jsx",
-                                        lineNumber: 44
+                                        lineNumber: 46
                                     },
                                     __self: undefined,
                                     children: "Description:"
@@ -41261,33 +41256,28 @@ const GenreView = ()=>{
                                     className: "value",
                                     __source: {
                                         fileName: "src/components/genre-view/genre-view.jsx",
-                                        lineNumber: 45
+                                        lineNumber: 47
                                     },
                                     __self: undefined,
                                     children: genre.Description
                                 })
                             ]
                         }),
-                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                            className: "genre-button-div",
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                            to: "/",
                             __source: {
                                 fileName: "src/components/genre-view/genre-view.jsx",
-                                lineNumber: 48
+                                lineNumber: 50
                             },
                             __self: undefined,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                                className: "genre-button",
-                                variant: "secondary",
-                                className: "mt-3",
-                                onClick: ()=>{
-                                    onBackClick(null);
-                                },
+                                className: "ml-auto btn btn-dark",
                                 __source: {
                                     fileName: "src/components/genre-view/genre-view.jsx",
-                                    lineNumber: 49
+                                    lineNumber: 51
                                 },
                                 __self: undefined,
-                                children: "Back"
+                                children: "Back to Movies"
                             })
                         })
                     ]
@@ -41309,7 +41299,7 @@ $RefreshReg$(_c, "GenreView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"6Ds2u","react":"4mchR","prop-types":"2bysO","react-router-dom":"etVME","axios":"1IeuP","react-bootstrap":"9qMdX","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","./genre-view.scss":"hKWHe"}],"hKWHe":[function() {},{}],"lGbHG":[function(require,module,exports) {
+},{"react/jsx-runtime":"6Ds2u","react-router-dom":"etVME","prop-types":"2bysO","./genre-view.scss":"hKWHe","react-bootstrap":"9qMdX","axios":"1IeuP","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","react":"4mchR"}],"hKWHe":[function() {},{}],"lGbHG":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$00e7 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
