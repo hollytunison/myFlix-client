@@ -22777,6 +22777,7 @@ var _movieView = require("../movie-view/movie-view");
 var _profileView = require("../profile-view/profile-view");
 //importing the director-view into the main-view
 var _directorView = require("../director-view/director-view");
+var _directorViewDefault = parcelHelpers.interopDefault(_directorView);
 //importing the director-view into the main-view
 var _genreView = require("../genre-view/genre-view");
 //importing the registration view into the main-view
@@ -23052,7 +23053,7 @@ class MainView extends _reactDefault.default.Component {
                                         }));
                                         return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                             md: 8,
-                                            children: /*#__PURE__*/ _jsxRuntime.jsx(_directorView.DirectorView, {
+                                            children: /*#__PURE__*/ _jsxRuntime.jsx(_directorViewDefault.default, {
                                                 director: movies.find((m)=>m.Director.Name === match.params.name
                                                 ).Director,
                                                 onBackClick: ()=>history.goBack()
@@ -40954,173 +40955,196 @@ $parcel$ReactRefreshHelpers$da2a.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "DirectorView", ()=>DirectorView
-);
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _directorViewScss = require("./director-view.scss");
 var _reactBootstrap = require("react-bootstrap");
-class DirectorView extends _reactDefault.default.Component {
-    render() {
-        const { director , onBackClick  } = this.props;
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
-            className: "directorContainer",
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _s = $RefreshSig$();
+const DirectorView = ()=>{
+    _s();
+    const [director, setDirector] = _react.useState({
+    });
+    let { Name  } = _reactRouterDom.useParams();
+    _react.useEffect(()=>{
+        const token = localStorage.getItem('token');
+        _axiosDefault.default.get('https://mysterious-plains-19334.herokuapp.com/directors/' + Name, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>{
+            // Assigns the result to the state
+            setDirector(response.data);
+            console.log(response.data);
+        }).catch(function(error) {
+            console.log(error);
+        });
+    }, []);
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
+        className: "directorContainer",
+        __source: {
+            fileName: "src/components/director-view/director-view.jsx",
+            lineNumber: 35
+        },
+        __self: undefined,
+        children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
             __source: {
                 fileName: "src/components/director-view/director-view.jsx",
-                lineNumber: 12
+                lineNumber: 36
             },
-            __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+            __self: undefined,
+            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                 __source: {
                     fileName: "src/components/director-view/director-view.jsx",
-                    lineNumber: 13
+                    lineNumber: 37
                 },
-                __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                __self: undefined,
+                children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                    className: "director-view",
                     __source: {
                         fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 14
+                        lineNumber: 38
                     },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                        className: "director-view",
-                        __source: {
-                            fileName: "src/components/director-view/director-view.jsx",
-                            lineNumber: 15
-                        },
-                        __self: this,
-                        children: [
-                            /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                                className: "director-name",
-                                __source: {
-                                    fileName: "src/components/director-view/director-view.jsx",
-                                    lineNumber: 16
-                                },
-                                __self: this,
-                                children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                        className: "name",
-                                        __source: {
-                                            fileName: "src/components/director-view/director-view.jsx",
-                                            lineNumber: 17
-                                        },
-                                        __self: this,
-                                        children: "Name: "
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                        className: "value",
-                                        __source: {
-                                            fileName: "src/components/director-view/director-view.jsx",
-                                            lineNumber: 18
-                                        },
-                                        __self: this,
-                                        children: director.Name
-                                    })
-                                ]
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                                className: "director-bio",
-                                __source: {
-                                    fileName: "src/components/director-view/director-view.jsx",
-                                    lineNumber: 21
-                                },
-                                __self: this,
-                                children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                        className: "bio",
-                                        __source: {
-                                            fileName: "src/components/director-view/director-view.jsx",
-                                            lineNumber: 22
-                                        },
-                                        __self: this,
-                                        children: "Bio: "
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                        className: "value",
-                                        __source: {
-                                            fileName: "src/components/director-view/director-view.jsx",
-                                            lineNumber: 23
-                                        },
-                                        __self: this,
-                                        children: director.Bio
-                                    })
-                                ]
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                                className: "director-birth",
-                                __source: {
-                                    fileName: "src/components/director-view/director-view.jsx",
-                                    lineNumber: 26
-                                },
-                                __self: this,
-                                children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                        className: "birth",
-                                        __source: {
-                                            fileName: "src/components/director-view/director-view.jsx",
-                                            lineNumber: 27
-                                        },
-                                        __self: this,
-                                        children: "Birth: "
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                        className: "value",
-                                        __source: {
-                                            fileName: "src/components/director-view/director-view.jsx",
-                                            lineNumber: 28
-                                        },
-                                        __self: this,
-                                        children: director.Bio
-                                    })
-                                ]
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                className: "director-button-div",
-                                __source: {
-                                    fileName: "src/components/director-view/director-view.jsx",
-                                    lineNumber: 31
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                                    className: "director-button mt-3",
-                                    variant: "secondary",
-                                    onClick: ()=>{
-                                        onBackClick(null);
-                                    },
+                    __self: undefined,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                            className: "director-name",
+                            __source: {
+                                fileName: "src/components/director-view/director-view.jsx",
+                                lineNumber: 39
+                            },
+                            __self: undefined,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                    className: "name",
                                     __source: {
                                         fileName: "src/components/director-view/director-view.jsx",
-                                        lineNumber: 32
+                                        lineNumber: 40
                                     },
-                                    __self: this,
-                                    children: "Back"
+                                    __self: undefined,
+                                    children: "Name: "
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                    className: "value",
+                                    __source: {
+                                        fileName: "src/components/director-view/director-view.jsx",
+                                        lineNumber: 41
+                                    },
+                                    __self: undefined,
+                                    children: director.Name
                                 })
+                            ]
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                            className: "director-bio",
+                            __source: {
+                                fileName: "src/components/director-view/director-view.jsx",
+                                lineNumber: 44
+                            },
+                            __self: undefined,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                    className: "bio",
+                                    __source: {
+                                        fileName: "src/components/director-view/director-view.jsx",
+                                        lineNumber: 45
+                                    },
+                                    __self: undefined,
+                                    children: "Bio: "
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                    className: "value",
+                                    __source: {
+                                        fileName: "src/components/director-view/director-view.jsx",
+                                        lineNumber: 46
+                                    },
+                                    __self: undefined,
+                                    children: director.Bio
+                                })
+                            ]
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                            className: "director-birth",
+                            __source: {
+                                fileName: "src/components/director-view/director-view.jsx",
+                                lineNumber: 49
+                            },
+                            __self: undefined,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                    className: "birth",
+                                    __source: {
+                                        fileName: "src/components/director-view/director-view.jsx",
+                                        lineNumber: 50
+                                    },
+                                    __self: undefined,
+                                    children: "Birth: "
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                    className: "value",
+                                    __source: {
+                                        fileName: "src/components/director-view/director-view.jsx",
+                                        lineNumber: 51
+                                    },
+                                    __self: undefined,
+                                    children: director.Birth
+                                })
+                            ]
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                            className: "director-button-div",
+                            __source: {
+                                fileName: "src/components/director-view/director-view.jsx",
+                                lineNumber: 54
+                            },
+                            __self: undefined,
+                            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                                className: "director-button mt-3",
+                                variant: "secondary",
+                                onClick: ()=>{
+                                    onBackClick(null);
+                                },
+                                __source: {
+                                    fileName: "src/components/director-view/director-view.jsx",
+                                    lineNumber: 55
+                                },
+                                __self: undefined,
+                                children: "Back"
                             })
-                        ]
-                    })
+                        })
+                    ]
                 })
             })
-        }));
-    }
-}
-DirectorView.propTypes = {
-    movie: _propTypesDefault.default.shape({
-        Director: _propTypesDefault.default.shape({
-            Name: _propTypesDefault.default.string.isRequired,
-            Bio: _propTypesDefault.default.string.isRequired,
-            Birth: _propTypesDefault.default.number.isRequired
-        }).isRequired
-    })
+        })
+    }));
 };
+_s(DirectorView, "hXMTP0aRnQgbPzI76k/syVSeRMw=", false, function() {
+    return [_reactRouterDom.useParams];
+});
+_c = DirectorView;
+exports.default = DirectorView; // DirectorView.propTypes = {
+ // 	movie: PropTypes.shape({
+ // 		Director: PropTypes.shape({
+ // 			Name: PropTypes.string.isRequired,
+ // 			Bio: PropTypes.string.isRequired,
+ // 			Birth: PropTypes.number.isRequired,
+ // 		}).isRequired,
+ // 	}),
+ // };
+var _c;
+$RefreshReg$(_c, "DirectorView");
 
   $parcel$ReactRefreshHelpers$da2a.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"6Ds2u","react":"4mchR","prop-types":"2bysO","./director-view.scss":"fYPph","react-bootstrap":"9qMdX","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"fYPph":[function() {},{}],"eGJ1e":[function(require,module,exports) {
+},{"react/jsx-runtime":"6Ds2u","react":"4mchR","prop-types":"2bysO","./director-view.scss":"fYPph","react-bootstrap":"9qMdX","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","react-router-dom":"etVME","axios":"1IeuP"}],"fYPph":[function() {},{}],"eGJ1e":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ec38 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41295,7 +41319,7 @@ GenreView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"6Ds2u","react":"4mchR","prop-types":"2bysO","./genre-view.scss":"hKWHe","react-bootstrap":"9qMdX","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","react-router-dom":"etVME","axios":"1IeuP"}],"hKWHe":[function() {},{}],"lGbHG":[function(require,module,exports) {
+},{"react/jsx-runtime":"6Ds2u","react":"4mchR","prop-types":"2bysO","react-router-dom":"etVME","axios":"1IeuP","./genre-view.scss":"hKWHe","react-bootstrap":"9qMdX","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"hKWHe":[function() {},{}],"lGbHG":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$00e7 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
