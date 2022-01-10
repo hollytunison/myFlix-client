@@ -41267,6 +41267,28 @@ const GenreView = ()=>{
                                     children: genre.Description
                                 })
                             ]
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                            className: "genre-button-div",
+                            __source: {
+                                fileName: "src/components/genre-view/genre-view.jsx",
+                                lineNumber: 48
+                            },
+                            __self: undefined,
+                            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                                className: "genre-button",
+                                variant: "secondary",
+                                className: "mt-3",
+                                onClick: ()=>{
+                                    onBackClick(null);
+                                },
+                                __source: {
+                                    fileName: "src/components/genre-view/genre-view.jsx",
+                                    lineNumber: 49
+                                },
+                                __self: undefined,
+                                children: "Back"
+                            })
                         })
                     ]
                 })

@@ -45,9 +45,9 @@ import axios from 'axios';
                 <span className="value">{genre.Description}</span>
               </div>
 
-              {/* <div className="genre-button-div">
+              <div className="genre-button-div">
                 <Button className="genre-button" variant="secondary" className="mt-3" onClick={() => { onBackClick(null); }}>Back</Button>
-              </div> */}
+              </div>
               
             </div>
           </Col>
