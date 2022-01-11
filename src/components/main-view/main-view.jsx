@@ -173,7 +173,7 @@ export class MainView extends React.Component {
 								}}
 							/>
 
-							<Route
+							{/* <Route
 								path='/directors/:Name'
 								render={({ match, history }) => {
 									if (!user)
@@ -226,7 +226,7 @@ export class MainView extends React.Component {
 										</Col>
 									);
 								}}
-							/>
+							/> */}
 						</Row>
 					</Container>
 				</div>
