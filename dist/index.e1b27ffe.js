@@ -23066,7 +23066,7 @@ class MainView extends _reactDefault.default.Component {
                                     __self: this
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
-                                    path: "/movies/genre/:Name",
+                                    path: "/genres/:Name",
                                     render: ({ match , history  })=>{
                                         if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                             children: /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
@@ -23079,8 +23079,6 @@ class MainView extends _reactDefault.default.Component {
                                         return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                             md: 8,
                                             children: /*#__PURE__*/ _jsxRuntime.jsx(_genreViewDefault.default, {
-                                                genre: movies.find((m)=>m.Genre.Name === match.params.name
-                                                ).Genre,
                                                 onBackClick: ()=>history.goBack()
                                             })
                                         }));
