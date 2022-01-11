@@ -18,17 +18,22 @@ export class MovieView extends React.Component {
 		const token = localStorage.getItem('token');
 		const username = localStorage.getItem('user');
 
-		axios.post(`https://mysterious-plains-19334.herokuapp.com/users/${username}/movies/${this.props.movie._id}`, {}, {
-				headers: { Authorization: `Bearer ${token}` },
-				method: 'POST'
-		})
-				.then(response => {
-						alert(`Added to Favorites List`)
-				})
-				.catch(function (error) {
-						console.log(error);
-				});
-};
+		axios
+			.post(
+				`https://mysterious-plains-19334.herokuapp.com/users/${username}/movies/${this.props.movie._id}`,
+				{},
+				{
+					headers: { Authorization: `Bearer ${token}` },
+					method: 'POST',
+				}
+			)
+			.then((response) => {
+				alert(`Added to Favorites List`);
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+	}
 
 	// getUser(token) {
 	// 	const username = localStorage.getItem('user');
@@ -53,27 +58,28 @@ export class MovieView extends React.Component {
 	getGenre() {
 		//fetch genre from API
 		//set state to retrieved genre
-
 	}
 
 	componentDidMount() {
 		let accessToken = localStorage.getItem('token');
-		
-			this.getGenre(accessToken);
 
+		this.getGenre(accessToken);
 	}
 
 	render() {
-		const { movie, genre , onBackClick } = this.props;
+		const { movie, genre, onBackClick } = this.props;
 
 		return (
 			<Container className='moviesContainer'>
-
 				<Row>
 					<Col>
 						<div className='movie-view'>
 							<div className='movie-poster'>
-								<img src={movie.ImagePath} alt="movie poster"crossOrigin='true' />
+								<img
+									crossorigin='anonymous'
+									src={movie.ImagePath}
+									alt='movie poster'
+								/>
 							</div>
 
 							<div className='movie-title'>
@@ -91,10 +97,12 @@ export class MovieView extends React.Component {
 								<span className='value'> {movie.Description} </span>
 							</div>
 
-							{ this.state.genre && <div className='movie-genre'>
-								<span className='genre'> Genre: </span>
-								<span className='value'> {movie.Genre.Name} </span>
-							</div> }
+							{this.state.genre && (
+								<div className='movie-genre'>
+									<span className='genre'> Genre: </span>
+									<span className='value'> {movie.Genre.Name} </span>
+								</div>
+							)}
 
 							<div className='movie-actors'>
 								<span className='actors'> Actors: </span>
@@ -128,8 +136,14 @@ export class MovieView extends React.Component {
 								>
 									Back
 								</Button>
-								<Button variant="outline-primary" className="btn-outline-light" value={movie._id} onClick={(e) => this.addFavoriteMovie(e, movie)}>Add to Favorites</Button>
-
+								<Button
+									variant='outline-primary'
+									className='btn-outline-light'
+									value={movie._id}
+									onClick={(e) => this.addFavoriteMovie(e, movie)}
+								>
+									Add to Favorites
+								</Button>
 							</div>
 						</div>
 					</Col>

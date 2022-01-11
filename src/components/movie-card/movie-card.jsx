@@ -19,6 +19,7 @@ export class MovieCard extends React.Component {
 									className='cardImage'
 									variant='top'
 									src={movie.ImagePath}
+									crossorigin='anonymous'
 								/>
 								<Card.Body>
 									<Card.Title>{movie.Title}</Card.Title>

@@ -27,7 +27,7 @@ export class MainView extends React.Component {
 		super();
 		this.state = {
 			movies: [],
-			user: null
+			user: null,
 		};
 	}
 
@@ -70,7 +70,6 @@ export class MainView extends React.Component {
 		this.getMovies(authData.token);
 	}
 
-
 	onLoggedOut() {
 		localStorage.removeItem('token');
 		localStorage.removeItem('user');
@@ -81,50 +80,73 @@ export class MainView extends React.Component {
 
 	render() {
 		const { movies, user } = this.state;
-		
+
 		return (
-			
 			<Router>
-            
-            
-            <Navbar fixed="top" className="mainnav py-3 py-lg-4" bg="navColor" variant="dark" expand="md">
-                <Navbar.Brand href="/"><span className="brand-name">My80sVice</span></Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                  <Nav className="ms-auto">
-                    <Nav.Link href="/">Movies</Nav.Link>
-                    <Nav.Link href="/users/:username">Profile</Nav.Link>
-                    <Nav.Link href="/" onClick={() => { this.onLoggedOut() }} >Logout</Nav.Link>
-                  </Nav>
-                </Navbar.Collapse>
-            </Navbar>
-           
-          
-            <div>
-              <Container>
-                <Row className="justify-content-md-center">
+				<Navbar
+					fixed='top'
+					className='mainnav py-3 py-lg-4'
+					bg='navColor'
+					variant='dark'
+					expand='md'
+				>
+					<Navbar.Brand href='/'>
+						<span className='brand-name'>My80sVice</span>
+					</Navbar.Brand>
+					<Navbar.Toggle aria-controls='basic-navbar-nav' />
+					<Navbar.Collapse id='basic-navbar-nav'>
+						<Nav className='ms-auto'>
+							<Nav.Link href='/'>Movies</Nav.Link>
+							<Nav.Link href='/users/:username'>Profile</Nav.Link>
+							<Nav.Link
+								href='/'
+								onClick={() => {
+									this.onLoggedOut();
+								}}
+							>
+								Logout
+							</Nav.Link>
+						</Nav>
+					</Navbar.Collapse>
+				</Navbar>
 
-                  <Route exact path="/" render={() => {
+				<div>
+					<Container>
+						<Row className='justify-content-md-center'>
+							<Route
+								exact
+								path='/'
+								render={() => {
+									if (!user)
+										return (
+											<Col>
+												<LoginView
+													onLoggedIn={(user) => this.onLoggedIn(user)}
+												/>
+											</Col>
+										);
 
-                    if (!user) return <Col>
-                      <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
-                    </Col>
+									// Before the movies have been loaded
+									if (movies.length === 0) return <div className='main-view' />;
+									return movies.map((m) => (
+										<Col sm={6} md={4} lg={4} key={m._id}>
+											<MovieCard movie={m} />
+										</Col>
+									));
+								}}
+							/>
 
-                    // Before the movies have been loaded
-                    if (movies.length === 0) return (<div className="main-view" />);
-                    return movies.map(m => (
-                      <Col sm={6} md={4} lg={4} key={m._id}>
-                        <MovieCard movie={m} />
-                      </Col>
-                    ))
-                  }} />
-
-                  <Route path="/register" render={() => {
-                    if (user) return <Redirect to="/" />
-                    return <Col>
-                      <RegistrationView />
-                    </Col>
-                  }} />
+							<Route
+								path='/register'
+								render={() => {
+									if (user) return <Redirect to='/' />;
+									return (
+										<Col>
+											<RegistrationView />
+										</Col>
+									);
+								}}
+							/>
 
 							<Route
 								path='/users/:username'
@@ -173,7 +195,7 @@ export class MainView extends React.Component {
 								}}
 							/>
 
-							{/* <Route
+							<Route
 								path='/directors/:Name'
 								render={({ match, history }) => {
 									if (!user)
@@ -188,21 +210,14 @@ export class MainView extends React.Component {
 									if (movies.length === 0) return <div className='main-view' />;
 									return (
 										<Col md={8}>
-											<DirectorView
-												director={
-													movies.find(
-														(m) => m.Director.Name === match.params.name
-													).Director
-												}
-												onBackClick={() => history.goBack()}
-											/>
+											<DirectorView onBackClick={() => history.goBack()} />
 										</Col>
 									);
 								}}
 							/>
 
 							<Route
-								path='/genres/:Name'
+								path='/movies/genre/:Name'
 								render={({ match, history }) => {
 									if (!user)
 										return (
@@ -224,9 +239,10 @@ export class MainView extends React.Component {
 												onBackClick={() => history.goBack()}
 											/>
 										</Col>
+
 									);
 								}}
-							/> */}
+							/>
 						</Row>
 					</Container>
 				</div>
