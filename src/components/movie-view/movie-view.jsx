@@ -35,26 +35,6 @@ export class MovieView extends React.Component {
 			});
 	}
 
-	// getUser(token) {
-	// 	const username = localStorage.getItem('user');
-	// 	axios
-	// 		.get(`https://mysterious-plains-19334.herokuapp.com/genres/${Name}`, {
-	// 			headers: { Authorization: `Bearer ${token}` },
-	// 		})
-	// 		.then((response) => {
-	// 			this.setState({
-	// 				Username: response.data.Username,
-	// 				Password: response.data.Password,
-	// 				Email: response.data.Email,
-	// 				Birthday: response.data.Birthday,
-	// 				FavoriteMovies: response.data.FavoriteMovies,
-	// 			});
-	// 		})
-	// 		.catch(function (error) {
-	// 			console.log(error);
-	// 		});
-	// }
-
 	getGenre() {
 		//fetch genre from API
 		//set state to retrieved genre
@@ -97,12 +77,11 @@ export class MovieView extends React.Component {
 								<span className='value'> {movie.Description} </span>
 							</div>
 
-							{this.state.genre && (
 								<div className='movie-genre'>
 									<span className='genre'> Genre: </span>
 									<span className='value'> {movie.Genre.Name} </span>
 								</div>
-							)}
+							
 
 							<div className='movie-actors'>
 								<span className='actors'> Actors: </span>
