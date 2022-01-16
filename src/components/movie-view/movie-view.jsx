@@ -50,6 +50,7 @@ export class MovieView extends React.Component {
 		const { movie, genre, onBackClick } = this.props;
 
 		return (
+			<div className='movie-div'>
 			<Container className='moviesContainer'>
 				<Row>
 					<Col>
@@ -126,6 +127,7 @@ export class MovieView extends React.Component {
 					</Col>
 				</Row>
 			</Container>
+			</div>
 		);
 	}
 }

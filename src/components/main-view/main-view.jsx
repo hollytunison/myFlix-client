@@ -110,8 +110,8 @@ export class MainView extends React.Component {
 					</Navbar.Collapse>
 				</Navbar>
 
-				<div>
-					<Container>
+			
+					<Container className='mainview-container'>
 						<Row className='justify-content-md-center'>
 							<Route
 								exact
@@ -239,7 +239,6 @@ export class MainView extends React.Component {
 							/>
 						</Row>
 					</Container>
-				</div>
 			</Router>
 		);
 	}

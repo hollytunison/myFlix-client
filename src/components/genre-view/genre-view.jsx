@@ -38,12 +38,12 @@ import axios from 'axios';
           <Col>
             <div className="genreLayout">
               <div className="genre-name">
-                <span className="name">Name:</span>
+                <span className="name">Name: </span>
                 <span className="value">{genre.Name}</span>
               </div>
 
               <div className="genre-description">
-                <span className="description">Description:</span>
+                <span className="description">Description: </span>
                 <span className="value">{genre.Description}</span>
               </div>
 

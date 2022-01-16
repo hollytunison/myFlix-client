@@ -183,7 +183,7 @@ export class ProfileView extends React.Component {
 							</span>{' '}
 						</p>
 					</div>
-					<Button
+					<Button className='signout-btn'
 						variant='light'
 						onClick={() => {
 							this.onLoggedOut();

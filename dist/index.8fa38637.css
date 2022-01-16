@@ -16,6 +16,10 @@
 .container {
   margin: 32px;
 }
+
+.mainview-container {
+  padding-top: 100px;
+}
 .h1,
 .h2,
 .p {
@@ -98,6 +102,10 @@
   margin-top: 8px;
   margin-bottom: 8px;
 }
+
+.movie-div {
+  padding-top: 50px;
+}
 * {
   box-sizing: border-box;
 }
@@ -117,6 +125,10 @@
 
 .container {
   margin: 32px;
+}
+
+.signout-btn {
+  margin-left: 24px;
 }
 .directorsContainer {
   background: #5c1818;
@@ -143,10 +155,8 @@
   width: 200px;
 }
 
-.directors-button {
-  margin-top: 20px;
-  width: 100%;
-  background-color: black;
+.director-birth {
+  padding-bottom: 24px;
 }
 .genreLayout {
   margin-top: 50px;
@@ -175,6 +185,10 @@
   width: 100%;
   background-color: black;
   padding: 32px;
+}
+
+.genre-description {
+  padding-bottom: 24px;
 }
 * {
   box-sizing: border-box;
