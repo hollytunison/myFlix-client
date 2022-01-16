@@ -39982,7 +39982,16 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MovieView", ()=>MovieView
-);
+) // MovieView.propTypes = {
+ // 	movie: PropTypes.objectOf({
+ // 		Title: PropTypes.string.isRequired,
+ // 		Year: PropTypes.string.isRequired,
+ // 		Description: PropTypes.object.isRequired,
+ // 		Actors: PropTypes.array.isRequired,
+ // 		ImagePath: PropTypes.string.isRequired,
+ // 	}).isRequired,
+ // };
+;
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
@@ -40067,7 +40076,7 @@ class MovieView extends _reactDefault.default.Component {
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                                        crossorigin: "anonymous",
+                                        crossOrigin: "anonymous",
                                         src: movie.ImagePath,
                                         alt: "movie poster",
                                         __source: {
@@ -40152,10 +40161,10 @@ class MovieView extends _reactDefault.default.Component {
                                                 lineNumber: 77
                                             },
                                             __self: this,
-                                            children: " Description: "
+                                            children: "Description: "
                                         }),
                                         /*#__PURE__*/ _jsxRuntime.jsxs("span", {
-                                            className: "value",
+                                            className: "object",
                                             __source: {
                                                 fileName: "src/components/movie-view/movie-view.jsx",
                                                 lineNumber: 78
@@ -40331,15 +40340,6 @@ class MovieView extends _reactDefault.default.Component {
         }));
     }
 }
-MovieView.propTypes = {
-    movie: _propTypesDefault.default.shape({
-        Title: _propTypesDefault.default.string.isRequired,
-        Year: _propTypesDefault.default.string.isRequired,
-        Description: _propTypesDefault.default.string.isRequired,
-        Actors: _propTypesDefault.default.array.isRequired,
-        ImagePath: _propTypesDefault.default.string.isRequired
-    }).isRequired
-};
 
   $parcel$ReactRefreshHelpers$4e70.postlude(module);
 } finally {

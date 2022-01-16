@@ -57,7 +57,7 @@ export class MovieView extends React.Component {
 						<div className='movie-view'>
 							<div className='movie-poster'>
 								<img
-									crossorigin='anonymous'
+									crossOrigin='anonymous'
 									src={movie.ImagePath}
 									alt='movie poster'
 								/>
@@ -74,8 +74,8 @@ export class MovieView extends React.Component {
 							</div>
 
 							<div className='movie-description'>
-								<span className='description'> Description: </span>
-								<span className='value'> {movie.Description} </span>
+								<span className='description'>Description: </span>
+								<span className='object'> {movie.Description} </span>
 							</div>
 
 							<div className='movie-genre'>
@@ -132,12 +132,12 @@ export class MovieView extends React.Component {
 	}
 }
 
-MovieView.propTypes = {
-	movie: PropTypes.shape({
-		Title: PropTypes.string.isRequired,
-		Year: PropTypes.string.isRequired,
-		Description: PropTypes.string.isRequired,
-		Actors: PropTypes.array.isRequired,
-		ImagePath: PropTypes.string.isRequired,
-	}).isRequired,
-};
+// MovieView.propTypes = {
+// 	movie: PropTypes.objectOf({
+// 		Title: PropTypes.string.isRequired,
+// 		Year: PropTypes.string.isRequired,
+// 		Description: PropTypes.object.isRequired,
+// 		Actors: PropTypes.array.isRequired,
+// 		ImagePath: PropTypes.string.isRequired,
+// 	}).isRequired,
+// };
