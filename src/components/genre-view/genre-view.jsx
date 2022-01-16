@@ -36,7 +36,7 @@ import axios from 'axios';
 			<Container className="genreContainer">
         <Row>
           <Col>
-            <div className="genre-view">
+            <div className="genreLayout">
               <div className="genre-name">
                 <span className="name">Name:</span>
                 <span className="value">{genre.Name}</span>

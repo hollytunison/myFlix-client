@@ -12,11 +12,9 @@ import "./index.scss";
 class MyFlixApplication extends React.Component {
   render() {
     return (
-      <React.Fragment>
       <Container fluid>
         <MainView />
       </Container>
-      </React.Fragment>
     );
   }
 }

@@ -956,26 +956,19 @@ var _indexScss = require("./index.scss");
 // Main component (will eventually use all the others)
 class MyFlixApplication extends _reactDefault.default.Component {
     render() {
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_reactDefault.default.Fragment, {
+        return(/*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
+            fluid: true,
             __source: {
                 fileName: "src/index.jsx",
                 lineNumber: 15
             },
             __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
-                fluid: true,
+            children: /*#__PURE__*/ _jsxRuntime.jsx(_mainView.MainView, {
                 __source: {
                     fileName: "src/index.jsx",
                     lineNumber: 16
                 },
-                __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsx(_mainView.MainView, {
-                    __source: {
-                        fileName: "src/index.jsx",
-                        lineNumber: 17
-                    },
-                    __self: this
-                })
+                __self: this
             })
         }));
     }
@@ -41172,7 +41165,7 @@ const GenreView = ()=>{
                 },
                 __self: undefined,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                    className: "genre-view",
+                    className: "genreCard",
                     __source: {
                         fileName: "src/components/genre-view/genre-view.jsx",
                         lineNumber: 39
