@@ -77,11 +77,10 @@ export class MovieView extends React.Component {
 								<span className='value'> {movie.Description} </span>
 							</div>
 
-								<div className='movie-genre'>
-									<span className='genre'> Genre: </span>
-									<span className='value'> {movie.Genre.Name} </span>
-								</div>
-							
+							<div className='movie-genre'>
+								<span className='genre'> Genre: </span>
+								<span className='value'> {movie.Genre.Name} </span>
+							</div>
 
 							<div className='movie-actors'>
 								<span className='actors'> Actors: </span>
@@ -90,7 +89,7 @@ export class MovieView extends React.Component {
 
 							<div className='director-button-div'>
 								<Link to={`/directors/${movie.Director.Name}`}>
-									<Button className='director-button' bg='dark' variant='dark'>
+									<Button className='director-button' bg='dark' variant='light'>
 										Director
 									</Button>
 								</Link>
@@ -98,26 +97,25 @@ export class MovieView extends React.Component {
 
 							<div className='genre-button-div'>
 								<Link to={`/genres/${movie.Genre.Name}`}>
-									<Button className='genre-button' bg='dark' variant='dark'>
+									<Button className='genre-button' bg='dark' variant='light'>
 										Genre
 									</Button>
 								</Link>
 							</div>
 
-							<div className='movie-button-div'>
+							<div className='d-grid gap-2'>
 								<Button
-									className='movie-button'
-									bg='dark'
-									variant='dark'
+									variant='light'
+									size='lg'
 									onClick={() => {
 										onBackClick(null);
 									}}
 								>
-									Back
+									Back to Movies
 								</Button>
 								<Button
-									variant='outline-primary'
-									className='btn-outline-light'
+									variant='info'
+									size='lg'
 									value={movie._id}
 									onClick={(e) => this.addFavoriteMovie(e, movie)}
 								>
