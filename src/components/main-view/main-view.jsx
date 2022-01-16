@@ -221,7 +221,7 @@ class MainView extends React.Component {
 	}
 }
 
-let mapStateToProps = (state) => {
+let mapStateToProps = state => {
   return { movies: state.movies };
 };
 

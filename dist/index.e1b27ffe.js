@@ -944,6 +944,7 @@ $parcel$ReactRefreshHelpers$607b.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
@@ -957,39 +958,43 @@ var _reduxDevtoolsExtension = require("redux-devtools-extension");
 var _reducers = require("./reducers/reducers");
 var _reducersDefault = parcelHelpers.interopDefault(_reducers);
 var _mainView = require("./components/main-view/main-view");
+var _mainViewDefault = parcelHelpers.interopDefault(_mainView);
 // Import statement to indicate that you need to bundle `./index.scss`
 var _indexScss = require("./index.scss");
 // Main component (will eventually use all the others)
-class MyFlixApplication extends _reactDefault.default.Component {
-    render() {
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_reactRedux.Provider, {
-            store: store,
+function MyFlixApplication() {
+    const myFlixStore = _redux.createStore(_reducersDefault.default);
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_reactRedux.Provider, {
+        store: myFlixStore,
+        __source: {
+            fileName: "src/index.jsx",
+            lineNumber: 19
+        },
+        __self: this,
+        children: /*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
             __source: {
                 fileName: "src/index.jsx",
-                lineNumber: 19
+                lineNumber: 20
             },
             __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
+            children: /*#__PURE__*/ _jsxRuntime.jsx(_mainViewDefault.default, {
                 __source: {
                     fileName: "src/index.jsx",
-                    lineNumber: 20
+                    lineNumber: 21
                 },
-                __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsx(_mainView.MainView, {
-                    __source: {
-                        fileName: "src/index.jsx",
-                        lineNumber: 21
-                    },
-                    __self: this
-                })
+                __self: this
             })
-        }));
-    }
+        })
+    }));
 }
+_c = MyFlixApplication;
 // Finds the root of your app
 const container = document.getElementsByClassName('app-container')[0];
 // Tells React to render your app in the root DOM element
 _reactDomDefault.default.render(/*#__PURE__*/ _reactDefault.default.createElement(MyFlixApplication), container);
+exports.default = MyFlixApplication;
+var _c;
+$RefreshReg$(_c, "MyFlixApplication");
 
   $parcel$ReactRefreshHelpers$607b.postlude(module);
 } finally {
