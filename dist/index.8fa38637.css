@@ -16,8 +16,11 @@
 .container {
   margin: 32px;
 }
-* {
-  box-sizing: border-box;
+.h1,
+.h2,
+.p {
+  font-family: "Limelight", cursive;
+  font-size: 24px;
 }
 
 .loginContainer {
@@ -184,9 +187,9 @@ div.app-container {
 .h1,
 .h2,
 .p {
-  font-family: "Orbitron", sans-serif;
-  color: white;
-  background-color: #3a3d47;
+  font-family: "Limelight", cursive;
+  font-size: 24px;
+  color: #e375cb;
 }
 
 div.app-container {

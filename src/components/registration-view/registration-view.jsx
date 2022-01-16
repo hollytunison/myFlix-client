@@ -23,13 +23,14 @@ export function RegistrationView(props) {
 
 	const [birthday, setBirthday] = useState('');
 	const [usernameError, setUsernameError] = useState(null);
-  const [emailError, setEmailError] = useState(null);
-  const [passwordError, setPasswordError] = useState(null);
+	const [emailError, setEmailError] = useState(null);
+	const [passwordError, setPasswordError] = useState(null);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log(username, password, email, birthday);
-		axios.post('https://mysterious-plains-19334.herokuapp.com/users', {
+		axios
+			.post('https://mysterious-plains-19334.herokuapp.com/users', {
 				Username: username,
 				Password: password,
 				Email: email,
@@ -40,33 +41,33 @@ export function RegistrationView(props) {
 				console.log(data);
 				window.open('/', '_self');
 			})
-			.catch(response => {
+			.catch((response) => {
 				console.error(response);
 				alert('unable to register');
 			});
-};
+	};
 
-const validate = (e) => {
-	let isValid = true;
+	const validate = (e) => {
+		let isValid = true;
 
-	//Conditions
-	if (username.trim().length < 5) {
-		setUsernameError("Username must have at least 5 characters.");
-		isValid = false;
-	}
+		//Conditions
+		if (username.trim().length < 5) {
+			setUsernameError('Username must have at least 5 characters.');
+			isValid = false;
+		}
 
-	if (password.trim().length < 5) {
-		setPasswordError("Your password must contain  at least 6 characters.");
-		isValid = false;
-	}
+		if (password.trim().length < 5) {
+			setPasswordError('Your password must contain  at least 6 characters.');
+			isValid = false;
+		}
 
-	if (!email.includes(".") || !email.includes("@")) {
-		setEmailError("Enter a valid email");
-		isValid = false;
-	}
+		if (!email.includes('.') || !email.includes('@')) {
+			setEmailError('Enter a valid email');
+			isValid = false;
+		}
 
-	return isValid;
-};
+		return isValid;
+	};
 
 	return (
 		<Container className='registrationContainer'>
@@ -78,8 +79,10 @@ const validate = (e) => {
 								<Card.Title className='text-center'>
 									Welcome to My 80 s Vice!
 								</Card.Title>
-								<Card.Subtitle className='mb-2 text-muted text-center'>Please Register</Card.Subtitle>
-							
+								<Card.Subtitle className='mb-2 text-muted text-center'>
+									Please Register
+								</Card.Subtitle>
+
 								<Form>
 									<Form.Group>
 										<Form.Label> Username </Form.Label>
@@ -124,10 +127,19 @@ const validate = (e) => {
 										/>
 									</Form.Group>
 
-									<Link to={`/`}>
-            <Button variant='dark' type='submit' onClick={handleSubmit}>Submit</Button>
-          </Link>
-
+									<div>
+										<Row>
+											<Link to={`/`}>
+												<Button
+													variant='dark'
+													type='submit'
+													onClick={handleSubmit}
+												>
+													Submit
+												</Button>
+											</Link>
+										</Row>
+									</div>
 								</Form>
 							</Card.Body>
 						</Card>
@@ -137,5 +149,3 @@ const validate = (e) => {
 		</Container>
 	);
 }
-
-

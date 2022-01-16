@@ -70,7 +70,8 @@ export function LoginView(props) {
 			<Card className='loginCard'>
 				<Card.Body>
 					<Card.Title className='text-center'>
-						Welcome to My 80 s Vice!
+						<h1>Welcome to</h1>
+						<h2>my80s Vice!</h2>
 					</Card.Title>
 					<Card.Subtitle className='mb-2 text-muted text-center'>
 						Please Login
@@ -112,7 +113,7 @@ export function LoginView(props) {
 						</Button>
 					</Form>
 					<Card.Subtitle className='mt-4 text-muted text-left'>
-						New user ? Register account below.
+					<p>	New user ? Register account below.</p>
 					</Card.Subtitle>
 					<Link to={`/register`}>
 						<Button className='registerButton' variant='dark' size='lg'>
