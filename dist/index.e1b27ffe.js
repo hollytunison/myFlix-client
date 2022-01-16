@@ -41594,16 +41594,10 @@ function MoviesList(props) {
         __self: this,
         children: "No movies"
     }));
-    return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
-        className: "movies",
-        __source: {
-            fileName: "src/components/movies-list/movies-list.jsx",
-            lineNumber: 25
-        },
-        __self: this,
+    return(/*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
         children: [
-            /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                className: "filter-section",
+            /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                md: 12,
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
                     lineNumber: 26
@@ -41618,30 +41612,23 @@ function MoviesList(props) {
                     __self: this
                 })
             }),
-            /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                className: "filtered-movies",
-                __source: {
-                    fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 29
-                },
-                __self: this,
-                children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx("div", {
+            filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                    md: 4,
+                    __source: {
+                        fileName: "src/components/movies-list/movies-list.jsx",
+                        lineNumber: 31
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
+                        movie: m,
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 31
+                            lineNumber: 32
                         },
-                        __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                            movie: m,
-                            __source: {
-                                fileName: "src/components/movies-list/movies-list.jsx",
-                                lineNumber: 32
-                            },
-                            __self: this
-                        })
-                    }, m._id)
-                )
-            })
+                        __self: this
+                    })
+                }, m._id)
+            )
         ]
     }));
 }
@@ -42247,16 +42234,7 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MovieView", ()=>MovieView
-) // MovieView.propTypes = {
- // 	movie: PropTypes.objectOf({
- // 		Title: PropTypes.string.isRequired,
- // 		Year: PropTypes.string.isRequired,
- // 		Description: PropTypes.object.isRequired,
- // 		Actors: PropTypes.array.isRequired,
- // 		ImagePath: PropTypes.string.isRequired,
- // 	}).isRequired,
- // };
-;
+);
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);

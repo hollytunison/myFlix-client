@@ -132,12 +132,3 @@ export class MovieView extends React.Component {
 	}
 }
 
-// MovieView.propTypes = {
-// 	movie: PropTypes.objectOf({
-// 		Title: PropTypes.string.isRequired,
-// 		Year: PropTypes.string.isRequired,
-// 		Description: PropTypes.object.isRequired,
-// 		Actors: PropTypes.array.isRequired,
-// 		ImagePath: PropTypes.string.isRequired,
-// 	}).isRequired,
-// };
