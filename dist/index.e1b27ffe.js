@@ -41165,7 +41165,7 @@ const GenreView = ()=>{
                 },
                 __self: undefined,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                    className: "genreCard",
+                    className: "genreLayout",
                     __source: {
                         fileName: "src/components/genre-view/genre-view.jsx",
                         lineNumber: 39
