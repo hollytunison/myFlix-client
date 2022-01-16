@@ -4,6 +4,7 @@
 
 .main-view {
   font-family: "Roboto", sans-serif;
+  background: linear-gradient(#e375cb, #78f2dd);
   flex-flow: column;
 }
 
@@ -126,17 +127,6 @@
 .signout-btn {
   margin-left: 24px;
 }
-.directorsContainer {
-  background: #5c1818;
-  width: 100%;
-  height: 100vh;
-}
-
-.directors-view {
-  margin-top: 50px;
-  color: white;
-}
-
 .name,
 .bio,
 .birth {
@@ -154,13 +144,19 @@
 .director-birth {
   padding-bottom: 24px;
 }
+
+.directorContainer {
+  width: 100%;
+  height: 100vh;
+}
 .genreLayout {
   margin-top: 50px;
   color: black;
 }
 
-.genresContainer {
-  background: linear-gradient(#e375cb, #78f2dd);
+.genreContainer {
+  width: 100%;
+  height: 100vh;
 }
 
 .name,
