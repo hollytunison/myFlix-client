@@ -25830,7 +25830,7 @@ var _moviesList = require("../movies-list/movies-list");
 var _moviesListDefault = parcelHelpers.interopDefault(_moviesList);
 var _loginView = require("../login-view/login-view");
 var _movieView = require("../movie-view/movie-view");
-var _movieCard = require("../movie-card/movie-card");
+//import { MovieCard } from '../movie-card/movie-card';
 var _profileView = require("../profile-view/profile-view");
 var _registrationView = require("../registration-view/registration-view");
 var _directorView = require("../director-view/director-view");
@@ -26150,7 +26150,7 @@ exports.default = _reactRedux.connect(mapStateToProps, {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"6Ds2u","react":"4mchR","axios":"1IeuP","react-redux":"lT3ms","react-router-dom":"etVME","react-bootstrap":"9qMdX","../../actions/actions":"6dgbZ","../movies-list/movies-list":"2BhWr","../login-view/login-view":"7IGV8","../movie-view/movie-view":"8S478","../movie-card/movie-card":"04zIX","../profile-view/profile-view":"aZt7f","../registration-view/registration-view":"lGbHG","../director-view/director-view":"47DIu","../genre-view/genre-view":"eGJ1e","./main-view.scss":"hRkrD","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"1IeuP":[function(require,module,exports) {
+},{"react/jsx-runtime":"6Ds2u","react":"4mchR","axios":"1IeuP","react-redux":"lT3ms","react-router-dom":"etVME","react-bootstrap":"9qMdX","../../actions/actions":"6dgbZ","../movies-list/movies-list":"2BhWr","../login-view/login-view":"7IGV8","../movie-view/movie-view":"8S478","../profile-view/profile-view":"aZt7f","../registration-view/registration-view":"lGbHG","../director-view/director-view":"47DIu","../genre-view/genre-view":"eGJ1e","./main-view.scss":"hRkrD","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13"}],"1IeuP":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"ePOwX"}],"ePOwX":[function(require,module,exports) {
