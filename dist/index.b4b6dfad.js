@@ -28444,7 +28444,7 @@ class MainView extends (0, _reactDefault.default).Component {
         }
     }
     getMovies(token) {
-        (0, _axiosDefault.default).get("https://mysterious-plains-19334.herokuapp.com/movies", {
+        (0, _axiosDefault.default).get("https://test-myflix.herokuapp.com/movies", {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -44192,7 +44192,7 @@ function LoginView(props) {
     const handleSubmit = (e)=>{
         e.preventDefault();
         const isReq = validate();
-        if (isReq) /* Send a request to the server for authentication */ (0, _axiosDefault.default).post("https://mysterious-plains-19334.herokuapp.com/login", {
+        if (isReq) /* Send a request to the server for authentication */ (0, _axiosDefault.default).post("https://test-myflix.herokuapp.com/login", {
             Username: username,
             Password: password
         }).then((response)=>{
@@ -44431,7 +44431,7 @@ class MovieView extends (0, _reactDefault.default).Component {
     addFavoriteMovie() {
         const token = localStorage.getItem("token");
         const username = localStorage.getItem("user");
-        (0, _axiosDefault.default).post(`https://mysterious-plains-19334.herokuapp.com/users/${username}/movies/${this.props.movie._id}`, {}, {
+        (0, _axiosDefault.default).post(`https://test-myflix.herokuapp.com/users/${username}/movies/${this.props.movie._id}`, {}, {
             headers: {
                 Authorization: `Bearer ${token}`
             },
@@ -44779,7 +44779,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
     // Current User profile data
     getUser(token) {
         const username = localStorage.getItem("user");
-        (0, _axiosDefault.default).get(`https://mysterious-plains-19334.herokuapp.com/users/${username}`, {
+        (0, _axiosDefault.default).get(`https://test-myflix.herokuapp.com/users/${username}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -44800,7 +44800,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
         e.preventDefault();
         const username = localStorage.getItem("user");
         const token = localStorage.getItem("token");
-        (0, _axiosDefault.default).put(`https://immense-reef-38292.herokuapp.com/users/${username}`, {
+        (0, _axiosDefault.default).put(`https://test-myflix.herokuapp.com/users/${username}`, {
             Username: this.state.Username,
             Password: this.state.Password,
             Email: this.state.Email,
@@ -44829,7 +44829,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
     onRemoveFavorite() {
         const username = localStorage.getItem("user");
         const token = localStorage.getItem("token");
-        (0, _axiosDefault.default).delete(`https://immense-reef-38292.herokuapp.com/users/${username}/movies/${movie._id}`, {
+        (0, _axiosDefault.default).delete(`https://test-myflix.herokuapp.com/users/${username}/movies/${movie._id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -44844,7 +44844,7 @@ class ProfileView extends (0, _reactDefault.default).Component {
     onDeleteUser() {
         const token = localStorage.getItem("token");
         const username = localStorage.getItem("user");
-        (0, _axiosDefault.default).delete(`https://immense-reef-38292.herokuapp.com/users/${username}`, {
+        (0, _axiosDefault.default).delete(`https://test-myflix.herokuapp.com/users/${username}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -45309,7 +45309,7 @@ function RegistrationView(props) {
     const handleSubmit = (e)=>{
         e.preventDefault();
         console.log(username, password, email, birthday);
-        (0, _axiosDefault.default).post("https://mysterious-plains-19334.herokuapp.com/users", {
+        (0, _axiosDefault.default).post("https://test-myflix.herokuapp.com/users", {
             Username: username,
             Password: password,
             Email: email,
@@ -45574,7 +45574,7 @@ const DirectorView = ()=>{
     (0, _react.useEffect)(()=>{
         console.log("working");
         const token = localStorage.getItem("token");
-        (0, _axiosDefault.default).get("https://mysterious-plains-19334.herokuapp.com/directors/" + Name, {
+        (0, _axiosDefault.default).get("https://test-myflix.herokuapp.com/directors/" + Name, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -45747,7 +45747,7 @@ const GenreView = ()=>{
     let { Name  } = (0, _reactRouterDom.useParams)();
     (0, _react.useEffect)(()=>{
         const token = localStorage.getItem("token");
-        (0, _axiosDefault.default).get("https://mysterious-plains-19334.herokuapp.com/genres/" + Name, {
+        (0, _axiosDefault.default).get("https://test-myflix.herokuapp.com/genres/" + Name, {
             headers: {
                 Authorization: `Bearer ${token}`
             }

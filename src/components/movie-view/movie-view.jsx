@@ -20,7 +20,7 @@ export class MovieView extends React.Component {
 
 		axios
 			.post(
-				`https://mysterious-plains-19334.herokuapp.com/users/${username}/movies/${this.props.movie._id}`,
+				`https://test-myflix.herokuapp.com/users/${username}/movies/${this.props.movie._id}`,
 				{},
 				{
 					headers: { Authorization: `Bearer ${token}` },

@@ -30,7 +30,7 @@ export function RegistrationView(props) {
 		e.preventDefault();
 		console.log(username, password, email, birthday);
 		axios
-			.post('https://mysterious-plains-19334.herokuapp.com/users', {
+			.post('https://test-myflix.herokuapp.com/users', {
 				Username: username,
 				Password: password,
 				Email: email,

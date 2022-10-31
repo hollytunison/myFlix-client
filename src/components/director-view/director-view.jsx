@@ -15,7 +15,7 @@ const DirectorView = () => {
 		console.log('working');
 		const token = localStorage.getItem('token');
 		axios
-			.get('https://mysterious-plains-19334.herokuapp.com/directors/' + Name, {
+			.get('https://test-myflix.herokuapp.com/directors/' + Name, {
 				headers: { Authorization: `Bearer ${token}` },
 			})
 			.then((response) => {

@@ -18,7 +18,7 @@ import axios from 'axios';
 
 			const token =localStorage.getItem('token');
 			axios
-			.get('https://mysterious-plains-19334.herokuapp.com/genres/'+Name, {
+			.get('https://test-myflix.herokuapp.com/genres/'+Name, {
 				headers: { Authorization: `Bearer ${token}` },
 			})
 			.then((response) => {
